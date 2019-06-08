@@ -6,7 +6,7 @@
 /****************************************************/
 
 #include "globals.h"
-#include "TINY.tab.h"
+#include "tiny.tab.h"
 
 /* set NO_PARSE to TRUE to get a scanner-only compiler */
 #define NO_PARSE FALSE

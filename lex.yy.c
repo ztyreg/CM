@@ -703,7 +703,7 @@ char *yytext;
 /* lexeme of identifier or reserved word */
 char tokenString[MAXTOKENLEN+1];
 #define YYSTYPE TreeNode *
-#include "TINY.tab.h"
+#include "tiny.tab.h"
 
 void comment(void);
 void count(void);

@@ -70,18 +70,18 @@ CMakeFiles/CM.dir/lex.yy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/lex.yy.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/lex.yy.c -o CMakeFiles/CM.dir/lex.yy.c.s
 
-CMakeFiles/CM.dir/TINY.tab.c.o: CMakeFiles/CM.dir/flags.make
-CMakeFiles/CM.dir/TINY.tab.c.o: ../TINY.tab.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/CM.dir/TINY.tab.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CM.dir/TINY.tab.c.o   -c /Users/zty/Documents/Courses/Compiler/CM/TINY.tab.c
+CMakeFiles/CM.dir/tiny.tab.c.o: CMakeFiles/CM.dir/flags.make
+CMakeFiles/CM.dir/tiny.tab.c.o: ../tiny.tab.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/CM.dir/tiny.tab.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CM.dir/tiny.tab.c.o   -c /Users/zty/Documents/Courses/Compiler/CM/tiny.tab.c
 
-CMakeFiles/CM.dir/TINY.tab.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CM.dir/TINY.tab.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zty/Documents/Courses/Compiler/CM/TINY.tab.c > CMakeFiles/CM.dir/TINY.tab.c.i
+CMakeFiles/CM.dir/tiny.tab.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CM.dir/tiny.tab.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zty/Documents/Courses/Compiler/CM/tiny.tab.c > CMakeFiles/CM.dir/tiny.tab.c.i
 
-CMakeFiles/CM.dir/TINY.tab.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/TINY.tab.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/TINY.tab.c -o CMakeFiles/CM.dir/TINY.tab.c.s
+CMakeFiles/CM.dir/tiny.tab.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/tiny.tab.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/tiny.tab.c -o CMakeFiles/CM.dir/tiny.tab.c.s
 
 CMakeFiles/CM.dir/util.c.o: CMakeFiles/CM.dir/flags.make
 CMakeFiles/CM.dir/util.c.o: ../util.c
@@ -138,7 +138,7 @@ CMakeFiles/CM.dir/symtab.c.s: cmake_force
 # Object files for target CM
 CM_OBJECTS = \
 "CMakeFiles/CM.dir/lex.yy.c.o" \
-"CMakeFiles/CM.dir/TINY.tab.c.o" \
+"CMakeFiles/CM.dir/tiny.tab.c.o" \
 "CMakeFiles/CM.dir/util.c.o" \
 "CMakeFiles/CM.dir/main.c.o" \
 "CMakeFiles/CM.dir/analyze.c.o" \
@@ -148,7 +148,7 @@ CM_OBJECTS = \
 CM_EXTERNAL_OBJECTS =
 
 CM: CMakeFiles/CM.dir/lex.yy.c.o
-CM: CMakeFiles/CM.dir/TINY.tab.c.o
+CM: CMakeFiles/CM.dir/tiny.tab.c.o
 CM: CMakeFiles/CM.dir/util.c.o
 CM: CMakeFiles/CM.dir/main.c.o
 CM: CMakeFiles/CM.dir/analyze.c.o

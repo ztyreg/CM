@@ -123,33 +123,6 @@ CM/fast:
 	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/build
 .PHONY : CM/fast
 
-TINY.tab.o: TINY.tab.c.o
-
-.PHONY : TINY.tab.o
-
-# target to build an object file
-TINY.tab.c.o:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/TINY.tab.c.o
-.PHONY : TINY.tab.c.o
-
-TINY.tab.i: TINY.tab.c.i
-
-.PHONY : TINY.tab.i
-
-# target to preprocess a source file
-TINY.tab.c.i:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/TINY.tab.c.i
-.PHONY : TINY.tab.c.i
-
-TINY.tab.s: TINY.tab.c.s
-
-.PHONY : TINY.tab.s
-
-# target to generate assembly for a file
-TINY.tab.c.s:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/TINY.tab.c.s
-.PHONY : TINY.tab.c.s
-
 analyze.o: analyze.c.o
 
 .PHONY : analyze.o
@@ -258,6 +231,33 @@ symtab.c.s:
 	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/symtab.c.s
 .PHONY : symtab.c.s
 
+tiny.tab.o: tiny.tab.c.o
+
+.PHONY : tiny.tab.o
+
+# target to build an object file
+tiny.tab.c.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/tiny.tab.c.o
+.PHONY : tiny.tab.c.o
+
+tiny.tab.i: tiny.tab.c.i
+
+.PHONY : tiny.tab.i
+
+# target to preprocess a source file
+tiny.tab.c.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/tiny.tab.c.i
+.PHONY : tiny.tab.c.i
+
+tiny.tab.s: tiny.tab.c.s
+
+.PHONY : tiny.tab.s
+
+# target to generate assembly for a file
+tiny.tab.c.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/tiny.tab.c.s
+.PHONY : tiny.tab.c.s
+
 util.o: util.c.o
 
 .PHONY : util.o
@@ -294,9 +294,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... CM"
-	@echo "... TINY.tab.o"
-	@echo "... TINY.tab.i"
-	@echo "... TINY.tab.s"
 	@echo "... analyze.o"
 	@echo "... analyze.i"
 	@echo "... analyze.s"
@@ -309,6 +306,9 @@ help:
 	@echo "... symtab.o"
 	@echo "... symtab.i"
 	@echo "... symtab.s"
+	@echo "... tiny.tab.o"
+	@echo "... tiny.tab.i"
+	@echo "... tiny.tab.s"
 	@echo "... util.o"
 	@echo "... util.i"
 	@echo "... util.s"

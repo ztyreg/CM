@@ -80,9 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/TINY.tab.c">
-			<Option target="CM"/>
-		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/analyze.c">
 			<Option target="CM"/>
 		</Unit>
@@ -99,6 +96,9 @@
 			<Option target="CM"/>
 		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/symtab.h">
+			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/tiny.tab.c">
 			<Option target="CM"/>
 		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/util.c">
