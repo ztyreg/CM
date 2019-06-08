@@ -1,0 +1,1 @@
+add_executable(CM lex/lex.yy.c yacc/y.tab.c util.c)
