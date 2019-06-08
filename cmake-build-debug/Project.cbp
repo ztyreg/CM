@@ -39,7 +39,7 @@
 			</Target>
 			<Target title="CM">
 				<Option output="/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CM" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug"/>
+				<Option working_dir=""/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="clang"/>
@@ -60,7 +60,7 @@
 			</Target>
 			<Target title="CM/fast">
 				<Option output="/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CM" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug"/>
+				<Option working_dir=""/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="clang"/>
@@ -80,7 +80,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/lex/lex.yy.c">
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/TINY.tab.c">
+			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/analyze.c">
+			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/analyze.h">
+			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/lex.yy.c">
+			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/main.c">
+			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/symtab.c">
+			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/symtab.h">
 			<Option target="CM"/>
 		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/util.c">
@@ -89,10 +107,10 @@
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/util.h">
 			<Option target="CM"/>
 		</Unit>
-		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/yacc/y.tab.c">
-			<Option target="CM"/>
-		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/test.c">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

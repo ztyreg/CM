@@ -57,31 +57,31 @@ include CMakeFiles/CM.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CM.dir/flags.make
 
-CMakeFiles/CM.dir/lex/lex.yy.c.o: CMakeFiles/CM.dir/flags.make
-CMakeFiles/CM.dir/lex/lex.yy.c.o: ../lex/lex.yy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CM.dir/lex/lex.yy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CM.dir/lex/lex.yy.c.o   -c /Users/zty/Documents/Courses/Compiler/CM/lex/lex.yy.c
+CMakeFiles/CM.dir/lex.yy.c.o: CMakeFiles/CM.dir/flags.make
+CMakeFiles/CM.dir/lex.yy.c.o: ../lex.yy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CM.dir/lex.yy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CM.dir/lex.yy.c.o   -c /Users/zty/Documents/Courses/Compiler/CM/lex.yy.c
 
-CMakeFiles/CM.dir/lex/lex.yy.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CM.dir/lex/lex.yy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zty/Documents/Courses/Compiler/CM/lex/lex.yy.c > CMakeFiles/CM.dir/lex/lex.yy.c.i
+CMakeFiles/CM.dir/lex.yy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CM.dir/lex.yy.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zty/Documents/Courses/Compiler/CM/lex.yy.c > CMakeFiles/CM.dir/lex.yy.c.i
 
-CMakeFiles/CM.dir/lex/lex.yy.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/lex/lex.yy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/lex/lex.yy.c -o CMakeFiles/CM.dir/lex/lex.yy.c.s
+CMakeFiles/CM.dir/lex.yy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/lex.yy.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/lex.yy.c -o CMakeFiles/CM.dir/lex.yy.c.s
 
-CMakeFiles/CM.dir/yacc/y.tab.c.o: CMakeFiles/CM.dir/flags.make
-CMakeFiles/CM.dir/yacc/y.tab.c.o: ../yacc/y.tab.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/CM.dir/yacc/y.tab.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CM.dir/yacc/y.tab.c.o   -c /Users/zty/Documents/Courses/Compiler/CM/yacc/y.tab.c
+CMakeFiles/CM.dir/TINY.tab.c.o: CMakeFiles/CM.dir/flags.make
+CMakeFiles/CM.dir/TINY.tab.c.o: ../TINY.tab.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/CM.dir/TINY.tab.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CM.dir/TINY.tab.c.o   -c /Users/zty/Documents/Courses/Compiler/CM/TINY.tab.c
 
-CMakeFiles/CM.dir/yacc/y.tab.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CM.dir/yacc/y.tab.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zty/Documents/Courses/Compiler/CM/yacc/y.tab.c > CMakeFiles/CM.dir/yacc/y.tab.c.i
+CMakeFiles/CM.dir/TINY.tab.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CM.dir/TINY.tab.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zty/Documents/Courses/Compiler/CM/TINY.tab.c > CMakeFiles/CM.dir/TINY.tab.c.i
 
-CMakeFiles/CM.dir/yacc/y.tab.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/yacc/y.tab.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/yacc/y.tab.c -o CMakeFiles/CM.dir/yacc/y.tab.c.s
+CMakeFiles/CM.dir/TINY.tab.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/TINY.tab.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/TINY.tab.c -o CMakeFiles/CM.dir/TINY.tab.c.s
 
 CMakeFiles/CM.dir/util.c.o: CMakeFiles/CM.dir/flags.make
 CMakeFiles/CM.dir/util.c.o: ../util.c
@@ -96,21 +96,66 @@ CMakeFiles/CM.dir/util.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/util.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/util.c -o CMakeFiles/CM.dir/util.c.s
 
+CMakeFiles/CM.dir/main.c.o: CMakeFiles/CM.dir/flags.make
+CMakeFiles/CM.dir/main.c.o: ../main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/CM.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CM.dir/main.c.o   -c /Users/zty/Documents/Courses/Compiler/CM/main.c
+
+CMakeFiles/CM.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CM.dir/main.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zty/Documents/Courses/Compiler/CM/main.c > CMakeFiles/CM.dir/main.c.i
+
+CMakeFiles/CM.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/main.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/main.c -o CMakeFiles/CM.dir/main.c.s
+
+CMakeFiles/CM.dir/analyze.c.o: CMakeFiles/CM.dir/flags.make
+CMakeFiles/CM.dir/analyze.c.o: ../analyze.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/CM.dir/analyze.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CM.dir/analyze.c.o   -c /Users/zty/Documents/Courses/Compiler/CM/analyze.c
+
+CMakeFiles/CM.dir/analyze.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CM.dir/analyze.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zty/Documents/Courses/Compiler/CM/analyze.c > CMakeFiles/CM.dir/analyze.c.i
+
+CMakeFiles/CM.dir/analyze.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/analyze.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/analyze.c -o CMakeFiles/CM.dir/analyze.c.s
+
+CMakeFiles/CM.dir/symtab.c.o: CMakeFiles/CM.dir/flags.make
+CMakeFiles/CM.dir/symtab.c.o: ../symtab.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/CM.dir/symtab.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CM.dir/symtab.c.o   -c /Users/zty/Documents/Courses/Compiler/CM/symtab.c
+
+CMakeFiles/CM.dir/symtab.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CM.dir/symtab.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zty/Documents/Courses/Compiler/CM/symtab.c > CMakeFiles/CM.dir/symtab.c.i
+
+CMakeFiles/CM.dir/symtab.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CM.dir/symtab.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zty/Documents/Courses/Compiler/CM/symtab.c -o CMakeFiles/CM.dir/symtab.c.s
+
 # Object files for target CM
 CM_OBJECTS = \
-"CMakeFiles/CM.dir/lex/lex.yy.c.o" \
-"CMakeFiles/CM.dir/yacc/y.tab.c.o" \
-"CMakeFiles/CM.dir/util.c.o"
+"CMakeFiles/CM.dir/lex.yy.c.o" \
+"CMakeFiles/CM.dir/TINY.tab.c.o" \
+"CMakeFiles/CM.dir/util.c.o" \
+"CMakeFiles/CM.dir/main.c.o" \
+"CMakeFiles/CM.dir/analyze.c.o" \
+"CMakeFiles/CM.dir/symtab.c.o"
 
 # External object files for target CM
 CM_EXTERNAL_OBJECTS =
 
-CM: CMakeFiles/CM.dir/lex/lex.yy.c.o
-CM: CMakeFiles/CM.dir/yacc/y.tab.c.o
+CM: CMakeFiles/CM.dir/lex.yy.c.o
+CM: CMakeFiles/CM.dir/TINY.tab.c.o
 CM: CMakeFiles/CM.dir/util.c.o
+CM: CMakeFiles/CM.dir/main.c.o
+CM: CMakeFiles/CM.dir/analyze.c.o
+CM: CMakeFiles/CM.dir/symtab.c.o
 CM: CMakeFiles/CM.dir/build.make
 CM: CMakeFiles/CM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable CM"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable CM"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CM.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

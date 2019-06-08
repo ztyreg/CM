@@ -123,32 +123,140 @@ CM/fast:
 	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/build
 .PHONY : CM/fast
 
-lex/lex.yy.o: lex/lex.yy.c.o
+TINY.tab.o: TINY.tab.c.o
 
-.PHONY : lex/lex.yy.o
+.PHONY : TINY.tab.o
 
 # target to build an object file
-lex/lex.yy.c.o:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex/lex.yy.c.o
-.PHONY : lex/lex.yy.c.o
+TINY.tab.c.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/TINY.tab.c.o
+.PHONY : TINY.tab.c.o
 
-lex/lex.yy.i: lex/lex.yy.c.i
+TINY.tab.i: TINY.tab.c.i
 
-.PHONY : lex/lex.yy.i
+.PHONY : TINY.tab.i
 
 # target to preprocess a source file
-lex/lex.yy.c.i:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex/lex.yy.c.i
-.PHONY : lex/lex.yy.c.i
+TINY.tab.c.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/TINY.tab.c.i
+.PHONY : TINY.tab.c.i
 
-lex/lex.yy.s: lex/lex.yy.c.s
+TINY.tab.s: TINY.tab.c.s
 
-.PHONY : lex/lex.yy.s
+.PHONY : TINY.tab.s
 
 # target to generate assembly for a file
-lex/lex.yy.c.s:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex/lex.yy.c.s
-.PHONY : lex/lex.yy.c.s
+TINY.tab.c.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/TINY.tab.c.s
+.PHONY : TINY.tab.c.s
+
+analyze.o: analyze.c.o
+
+.PHONY : analyze.o
+
+# target to build an object file
+analyze.c.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/analyze.c.o
+.PHONY : analyze.c.o
+
+analyze.i: analyze.c.i
+
+.PHONY : analyze.i
+
+# target to preprocess a source file
+analyze.c.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/analyze.c.i
+.PHONY : analyze.c.i
+
+analyze.s: analyze.c.s
+
+.PHONY : analyze.s
+
+# target to generate assembly for a file
+analyze.c.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/analyze.c.s
+.PHONY : analyze.c.s
+
+lex.yy.o: lex.yy.c.o
+
+.PHONY : lex.yy.o
+
+# target to build an object file
+lex.yy.c.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex.yy.c.o
+.PHONY : lex.yy.c.o
+
+lex.yy.i: lex.yy.c.i
+
+.PHONY : lex.yy.i
+
+# target to preprocess a source file
+lex.yy.c.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex.yy.c.i
+.PHONY : lex.yy.c.i
+
+lex.yy.s: lex.yy.c.s
+
+.PHONY : lex.yy.s
+
+# target to generate assembly for a file
+lex.yy.c.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex.yy.c.s
+.PHONY : lex.yy.c.s
+
+main.o: main.c.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/main.c.s
+.PHONY : main.c.s
+
+symtab.o: symtab.c.o
+
+.PHONY : symtab.o
+
+# target to build an object file
+symtab.c.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/symtab.c.o
+.PHONY : symtab.c.o
+
+symtab.i: symtab.c.i
+
+.PHONY : symtab.i
+
+# target to preprocess a source file
+symtab.c.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/symtab.c.i
+.PHONY : symtab.c.i
+
+symtab.s: symtab.c.s
+
+.PHONY : symtab.s
+
+# target to generate assembly for a file
+symtab.c.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/symtab.c.s
+.PHONY : symtab.c.s
 
 util.o: util.c.o
 
@@ -177,33 +285,6 @@ util.c.s:
 	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/util.c.s
 .PHONY : util.c.s
 
-yacc/y.tab.o: yacc/y.tab.c.o
-
-.PHONY : yacc/y.tab.o
-
-# target to build an object file
-yacc/y.tab.c.o:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/yacc/y.tab.c.o
-.PHONY : yacc/y.tab.c.o
-
-yacc/y.tab.i: yacc/y.tab.c.i
-
-.PHONY : yacc/y.tab.i
-
-# target to preprocess a source file
-yacc/y.tab.c.i:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/yacc/y.tab.c.i
-.PHONY : yacc/y.tab.c.i
-
-yacc/y.tab.s: yacc/y.tab.c.s
-
-.PHONY : yacc/y.tab.s
-
-# target to generate assembly for a file
-yacc/y.tab.c.s:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/yacc/y.tab.c.s
-.PHONY : yacc/y.tab.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,15 +294,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... CM"
-	@echo "... lex/lex.yy.o"
-	@echo "... lex/lex.yy.i"
-	@echo "... lex/lex.yy.s"
+	@echo "... TINY.tab.o"
+	@echo "... TINY.tab.i"
+	@echo "... TINY.tab.s"
+	@echo "... analyze.o"
+	@echo "... analyze.i"
+	@echo "... analyze.s"
+	@echo "... lex.yy.o"
+	@echo "... lex.yy.i"
+	@echo "... lex.yy.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... symtab.o"
+	@echo "... symtab.i"
+	@echo "... symtab.s"
 	@echo "... util.o"
 	@echo "... util.i"
 	@echo "... util.s"
-	@echo "... yacc/y.tab.o"
-	@echo "... yacc/y.tab.i"
-	@echo "... yacc/y.tab.s"
 .PHONY : help
 
 

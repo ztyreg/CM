@@ -17,6 +17,10 @@ static char * savedName; /* for use in assignments */
 static int savedLineNo;  /* ditto */
 static TreeNode * savedTree; /* stores syntax tree for later return */
 
+int yylex(void);
+int yyerror(char * message);
+
+
 %}
 
 %token IDENTIFIER CONSTANT STRING_LITERAL SIZEOF
@@ -311,25 +315,5 @@ TreeNode * parse(void)
 { yyparse();
   printf("parse end\n");
   return savedTree;
-}
-
-int main(void)
-{
-	listing=stdout;
-	const char* sFile="test.c";
-	FILE* fp=fopen(sFile, "r");
-	if(fp==NULL)
-	{
-		printf("cannot open %s\n", sFile);
-		return -1;
-	}
-	extern FILE* yyin;	
-	yyin=fp;
-    printf("Parse %s start\n",sFile);
-    TreeNode * t;
-    t=parse();
-    printTree(t);
-    system("pause");
-    return 0;
 }
 

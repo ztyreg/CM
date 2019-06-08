@@ -4,9 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/zty/Documents/Courses/Compiler/CM/lex/lex.yy.c" "/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/CM.dir/lex/lex.yy.c.o"
+  "/Users/zty/Documents/Courses/Compiler/CM/TINY.tab.c" "/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/CM.dir/TINY.tab.c.o"
+  "/Users/zty/Documents/Courses/Compiler/CM/analyze.c" "/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/CM.dir/analyze.c.o"
+  "/Users/zty/Documents/Courses/Compiler/CM/lex.yy.c" "/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/CM.dir/lex.yy.c.o"
+  "/Users/zty/Documents/Courses/Compiler/CM/main.c" "/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/CM.dir/main.c.o"
+  "/Users/zty/Documents/Courses/Compiler/CM/symtab.c" "/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/CM.dir/symtab.c.o"
   "/Users/zty/Documents/Courses/Compiler/CM/util.c" "/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/CM.dir/util.c.o"
-  "/Users/zty/Documents/Courses/Compiler/CM/yacc/y.tab.c" "/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/CM.dir/yacc/y.tab.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 

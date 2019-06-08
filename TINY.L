@@ -12,10 +12,12 @@
 /* lexeme of identifier or reserved word */
 char tokenString[MAXTOKENLEN+1];
 #define YYSTYPE TreeNode *
-#include "tiny.tab.h"
+#include "TINY.tab.h"
 
 void comment(void);
 void count(void);
+static int input (void );
+
 %}
 
 D			[0-9]

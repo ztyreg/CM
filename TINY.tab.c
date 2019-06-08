@@ -236,6 +236,10 @@ static char * savedName; /* for use in assignments */
 static int savedLineNo;  /* ditto */
 static TreeNode * savedTree; /* stores syntax tree for later return */
 
+int yylex(void);
+int yyerror(char * message);
+
+
 
 
 /* Enabling traces.  */
@@ -269,7 +273,7 @@ typedef int YYSTYPE;
 
 
 /* Line 216 of yacc.c.  */
-#line 273 "tiny.tab.c"
+#line 277 "tiny.tab.c"
 
 #ifdef short
 # undef short
@@ -584,13 +588,13 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,    39,    39,    42,    50,    53,    54,    57,    62,    72,
-      73,    80,    84,    90,    96,    99,   107,   110,   111,   116,
-     124,   131,   143,   146,   154,   157,   158,   159,   160,   161,
-     164,   169,   177,   183,   191,   199,   200,   206,   207,   210,
-     215,   218,   223,   226,   227,   228,   229,   230,   231,   234,
-     240,   246,   249,   255,   261,   264,   265,   266,   267,   268,
-     271,   279,   280,   283,   291
+       0,    43,    43,    46,    54,    57,    58,    61,    66,    76,
+      77,    84,    88,    94,   100,   103,   111,   114,   115,   120,
+     128,   135,   147,   150,   158,   161,   162,   163,   164,   165,
+     168,   173,   181,   187,   195,   203,   204,   210,   211,   214,
+     219,   222,   227,   230,   231,   232,   233,   234,   235,   238,
+     244,   250,   253,   259,   265,   268,   269,   270,   271,   272,
+     275,   283,   284,   287,   295
 };
 #endif
 
@@ -1586,12 +1590,12 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 39 "tiny.y"
+#line 43 "tiny.y"
     { savedTree = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 3:
-#line 43 "tiny.y"
+#line 47 "tiny.y"
     {YYSTYPE t = (yyvsp[(1) - (2)]);
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
@@ -1602,22 +1606,22 @@ yyreduce:
     break;
 
   case 4:
-#line 50 "tiny.y"
-    { (yyval) = (yyvsp[(1) - (1)]); ;}
-    break;
-
-  case 5:
-#line 53 "tiny.y"
-    { (yyval) = (yyvsp[(1) - (1)]); ;}
-    break;
-
-  case 6:
 #line 54 "tiny.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
-  case 7:
+  case 5:
+#line 57 "tiny.y"
+    { (yyval) = (yyvsp[(1) - (1)]); ;}
+    break;
+
+  case 6:
 #line 58 "tiny.y"
+    { (yyval) = (yyvsp[(1) - (1)]); ;}
+    break;
+
+  case 7:
+#line 62 "tiny.y"
     {(yyval) = newDeclNode(VarK);
 	  (yyval)->child[0]=(yyvsp[(1) - (3)]);
 	  (yyval)->child[1]=(yyvsp[(2) - (3)]);
@@ -1625,7 +1629,7 @@ yyreduce:
     break;
 
   case 8:
-#line 64 "tiny.y"
+#line 68 "tiny.y"
     {(yyval) = newDeclNode(VarK);
 	  (yyval)->child[0]=(yyvsp[(1) - (6)]);
 	  (yyval)->child[1]=(yyvsp[(2) - (6)]);
@@ -1635,7 +1639,7 @@ yyreduce:
     break;
 
   case 10:
-#line 74 "tiny.y"
+#line 78 "tiny.y"
     {(yyval)=(yyvsp[(1) - (4)]);
 	 (yyval)->sibling = (yyvsp[(3) - (4)]);
 	 (yyval)->attr.type="int*";
@@ -1643,21 +1647,21 @@ yyreduce:
     break;
 
   case 11:
-#line 81 "tiny.y"
+#line 85 "tiny.y"
     {(yyval) = newExpNode(TypeK);
 	 (yyval)->attr.type = "void";
 	;}
     break;
 
   case 12:
-#line 85 "tiny.y"
+#line 89 "tiny.y"
     {(yyval) = newExpNode(TypeK);
 	 (yyval)->attr.type = "int";
 	;}
     break;
 
   case 13:
-#line 91 "tiny.y"
+#line 95 "tiny.y"
     {(yyval) = newDeclNode(FuncK);
 	  (yyval)->child[0]=(yyvsp[(1) - (5)]);
 	  (yyval)->child[1]=(yyvsp[(2) - (5)]);
@@ -1666,12 +1670,12 @@ yyreduce:
     break;
 
   case 14:
-#line 96 "tiny.y"
+#line 100 "tiny.y"
     {(yyval) = (yyvsp[(1) - (1)]);;}
     break;
 
   case 15:
-#line 100 "tiny.y"
+#line 104 "tiny.y"
     {YYSTYPE t = (yyvsp[(1) - (3)]);
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
@@ -1682,17 +1686,17 @@ yyreduce:
     break;
 
   case 16:
-#line 107 "tiny.y"
+#line 111 "tiny.y"
     {(yyval) = (yyvsp[(1) - (1)]);;}
     break;
 
   case 17:
-#line 110 "tiny.y"
+#line 114 "tiny.y"
     {(yyval) = (yyvsp[(1) - (1)]);;}
     break;
 
   case 18:
-#line 112 "tiny.y"
+#line 116 "tiny.y"
     {(yyval) = newDeclNode(VarK);
 	 (yyval)->child[0]=(yyvsp[(1) - (2)]);
 	 (yyval)->child[1]=(yyvsp[(2) - (2)]);
@@ -1700,7 +1704,7 @@ yyreduce:
     break;
 
   case 19:
-#line 117 "tiny.y"
+#line 121 "tiny.y"
     {(yyval) = newDeclNode(VarK);
 	 (yyval)->child[0]=(yyvsp[(1) - (4)]);
 	 (yyval)->child[1]=(yyvsp[(2) - (4)]);
@@ -1709,7 +1713,7 @@ yyreduce:
     break;
 
   case 20:
-#line 125 "tiny.y"
+#line 129 "tiny.y"
     {(yyval) = newStmtNode(CompK);
 	 (yyval)->child[0]=(yyvsp[(2) - (4)]);
 	 (yyval)->child[1]=(yyvsp[(3) - (4)]);
@@ -1717,7 +1721,7 @@ yyreduce:
     break;
 
   case 21:
-#line 132 "tiny.y"
+#line 136 "tiny.y"
     {YYSTYPE t = (yyvsp[(1) - (2)]);
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
@@ -1732,12 +1736,12 @@ yyreduce:
     break;
 
   case 22:
-#line 143 "tiny.y"
+#line 147 "tiny.y"
     {(yyval)=NULL;;}
     break;
 
   case 23:
-#line 147 "tiny.y"
+#line 151 "tiny.y"
     {YYSTYPE t = (yyvsp[(1) - (2)]);
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
@@ -1748,37 +1752,37 @@ yyreduce:
     break;
 
   case 24:
-#line 154 "tiny.y"
+#line 158 "tiny.y"
     {(yyval) = (yyvsp[(1) - (1)]);;}
     break;
 
   case 25:
-#line 157 "tiny.y"
-    { (yyval) = (yyvsp[(1) - (1)]); ;}
-    break;
-
-  case 26:
-#line 158 "tiny.y"
-    { (yyval) = (yyvsp[(1) - (1)]); ;}
-    break;
-
-  case 27:
-#line 159 "tiny.y"
-    { (yyval) = (yyvsp[(1) - (1)]); ;}
-    break;
-
-  case 28:
-#line 160 "tiny.y"
-    { (yyval) = (yyvsp[(1) - (1)]); ;}
-    break;
-
-  case 29:
 #line 161 "tiny.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
-  case 30:
+  case 26:
+#line 162 "tiny.y"
+    { (yyval) = (yyvsp[(1) - (1)]); ;}
+    break;
+
+  case 27:
+#line 163 "tiny.y"
+    { (yyval) = (yyvsp[(1) - (1)]); ;}
+    break;
+
+  case 28:
+#line 164 "tiny.y"
+    { (yyval) = (yyvsp[(1) - (1)]); ;}
+    break;
+
+  case 29:
 #line 165 "tiny.y"
+    { (yyval) = (yyvsp[(1) - (1)]); ;}
+    break;
+
+  case 30:
+#line 169 "tiny.y"
     {(yyval) = newStmtNode(IfK);
      (yyval)->child[0] = (yyvsp[(3) - (5)]);
      (yyval)->child[1] = (yyvsp[(5) - (5)]);
@@ -1786,7 +1790,7 @@ yyreduce:
     break;
 
   case 31:
-#line 170 "tiny.y"
+#line 174 "tiny.y"
     {(yyval) = newStmtNode(IfK);
      (yyval)->child[0] = (yyvsp[(3) - (7)]);
      (yyval)->child[1] = (yyvsp[(5) - (7)]);
@@ -1795,7 +1799,7 @@ yyreduce:
     break;
 
   case 32:
-#line 178 "tiny.y"
+#line 182 "tiny.y"
     {(yyval) = newStmtNode(ItrK);
 	 (yyval)->child[0] = (yyvsp[(3) - (5)]);
 	 (yyval)->child[1] = (yyvsp[(5) - (5)]);
@@ -1804,7 +1808,7 @@ yyreduce:
     break;
 
   case 33:
-#line 184 "tiny.y"
+#line 188 "tiny.y"
     {(yyval) = newStmtNode(ItrK);
 	 (yyval)->child[0] = (yyvsp[(3) - (7)]);
 	 (yyval)->child[1] = (yyvsp[(4) - (7)]);
@@ -1815,7 +1819,7 @@ yyreduce:
     break;
 
   case 34:
-#line 192 "tiny.y"
+#line 196 "tiny.y"
     {(yyval) = newStmtNode(ItrK);
 	 (yyval)->child[0] = (yyvsp[(2) - (6)]);
 	 (yyval)->child[1] = (yyvsp[(5) - (6)]);
@@ -1824,24 +1828,24 @@ yyreduce:
     break;
 
   case 35:
-#line 199 "tiny.y"
+#line 203 "tiny.y"
     {(yyval) = newStmtNode(RetK);;}
     break;
 
   case 36:
-#line 201 "tiny.y"
+#line 205 "tiny.y"
     {(yyval) = newStmtNode(RetK);
 	 (yyval)->child[0]=(yyvsp[(2) - (3)]);
 	;}
     break;
 
   case 37:
-#line 206 "tiny.y"
+#line 210 "tiny.y"
     { (yyval) = (yyvsp[(1) - (2)]); ;}
     break;
 
   case 39:
-#line 211 "tiny.y"
+#line 215 "tiny.y"
     {(yyval) = newStmtNode(AssignK);
 	 (yyval)->child[0]=(yyvsp[(1) - (3)]);
 	 (yyval)->child[1]=(yyvsp[(3) - (3)]);
@@ -1849,12 +1853,12 @@ yyreduce:
     break;
 
   case 40:
-#line 215 "tiny.y"
+#line 219 "tiny.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 41:
-#line 219 "tiny.y"
+#line 223 "tiny.y"
     {(yyval) = (yyvsp[(2) - (3)]);
 	 (yyval)->child[0] = (yyvsp[(1) - (3)]);
 	 (yyval)->child[1] = (yyvsp[(3) - (3)]);
@@ -1862,42 +1866,42 @@ yyreduce:
     break;
 
   case 42:
-#line 223 "tiny.y"
+#line 227 "tiny.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 43:
-#line 226 "tiny.y"
+#line 230 "tiny.y"
     {(yyval) = newExpNode(OpK);(yyval)->attr.op = LE_OP;;}
     break;
 
   case 44:
-#line 227 "tiny.y"
+#line 231 "tiny.y"
     {(yyval) = newExpNode(OpK);(yyval)->attr.op = GE_OP;;}
     break;
 
   case 45:
-#line 228 "tiny.y"
+#line 232 "tiny.y"
     {(yyval) = newExpNode(OpK);(yyval)->attr.op = EQ_OP;;}
     break;
 
   case 46:
-#line 229 "tiny.y"
+#line 233 "tiny.y"
     {(yyval) = newExpNode(OpK);(yyval)->attr.op = NE_OP;;}
     break;
 
   case 47:
-#line 230 "tiny.y"
+#line 234 "tiny.y"
     {(yyval) = newExpNode(OpK);(yyval)->attr.op = GT;;}
     break;
 
   case 48:
-#line 231 "tiny.y"
+#line 235 "tiny.y"
     {(yyval) = newExpNode(OpK);(yyval)->attr.op = LT;;}
     break;
 
   case 49:
-#line 235 "tiny.y"
+#line 239 "tiny.y"
     {(yyval) = newExpNode(OpK);
 	 (yyval)->child[0] = (yyvsp[(1) - (3)]);
 	 (yyval)->child[1] = (yyvsp[(3) - (3)]);
@@ -1906,7 +1910,7 @@ yyreduce:
     break;
 
   case 50:
-#line 241 "tiny.y"
+#line 245 "tiny.y"
     {(yyval) = newExpNode(OpK);
 	 (yyval)->child[0] = (yyvsp[(1) - (3)]);
 	 (yyval)->child[1] = (yyvsp[(3) - (3)]);
@@ -1915,12 +1919,12 @@ yyreduce:
     break;
 
   case 51:
-#line 246 "tiny.y"
+#line 250 "tiny.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 52:
-#line 250 "tiny.y"
+#line 254 "tiny.y"
     {(yyval) = newExpNode(OpK);
 	 (yyval)->child[0] = (yyvsp[(1) - (3)]);
 	 (yyval)->child[1] = (yyvsp[(3) - (3)]);
@@ -1929,7 +1933,7 @@ yyreduce:
     break;
 
   case 53:
-#line 256 "tiny.y"
+#line 260 "tiny.y"
     {(yyval) = newExpNode(OpK);
 	 (yyval)->child[0] = (yyvsp[(1) - (3)]);
 	 (yyval)->child[1] = (yyvsp[(3) - (3)]);
@@ -1938,32 +1942,32 @@ yyreduce:
     break;
 
   case 54:
-#line 261 "tiny.y"
-    { (yyval) = (yyvsp[(1) - (1)]); ;}
-    break;
-
-  case 55:
-#line 264 "tiny.y"
-    { (yyval) = (yyvsp[(2) - (3)]); ;}
-    break;
-
-  case 56:
 #line 265 "tiny.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
+  case 55:
+#line 268 "tiny.y"
+    { (yyval) = (yyvsp[(2) - (3)]); ;}
+    break;
+
+  case 56:
+#line 269 "tiny.y"
+    { (yyval) = (yyvsp[(1) - (1)]); ;}
+    break;
+
   case 57:
-#line 266 "tiny.y"
+#line 270 "tiny.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 59:
-#line 268 "tiny.y"
+#line 272 "tiny.y"
     { (yyval) = NULL; ;}
     break;
 
   case 60:
-#line 272 "tiny.y"
+#line 276 "tiny.y"
     {(yyval) = newStmtNode(CallK);
 	 (yyval)->attr.name=(yyvsp[(1) - (4)])->attr.name;
 	 (yyval)->child[0]=(yyvsp[(1) - (4)]);
@@ -1972,17 +1976,17 @@ yyreduce:
     break;
 
   case 61:
-#line 279 "tiny.y"
+#line 283 "tiny.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 62:
-#line 280 "tiny.y"
+#line 284 "tiny.y"
     { (yyval) = NULL; ;}
     break;
 
   case 63:
-#line 284 "tiny.y"
+#line 288 "tiny.y"
     {YYSTYPE t = (yyvsp[(1) - (3)]);
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
@@ -1993,13 +1997,13 @@ yyreduce:
     break;
 
   case 64:
-#line 291 "tiny.y"
+#line 295 "tiny.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 2003 "tiny.tab.c"
+#line 2007 "tiny.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -2213,7 +2217,7 @@ yyreturn:
 }
 
 
-#line 294 "tiny.y"
+#line 298 "tiny.y"
 
 extern int column;
 int yyerror(char * message)
@@ -2234,26 +2238,6 @@ TreeNode * parse(void)
 { yyparse();
   printf("parse end\n");
   return savedTree;
-}
-
-int main(void)
-{
-	listing=stdout;
-	const char* sFile="test.c";
-	FILE* fp=fopen(sFile, "r");
-	if(fp==NULL)
-	{
-		printf("cannot open %s\n", sFile);
-		return -1;
-	}
-	extern FILE* yyin;	
-	yyin=fp;
-    printf("Parse %s start\n",sFile);
-    TreeNode * t;
-    t=parse();
-    printTree(t);
-    system("pause");
-    return 0;
 }
 
 

@@ -1,7 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CM.dir/lex/lex.yy.c.o"
-  "CMakeFiles/CM.dir/yacc/y.tab.c.o"
+  "CMakeFiles/CM.dir/lex.yy.c.o"
+  "CMakeFiles/CM.dir/TINY.tab.c.o"
   "CMakeFiles/CM.dir/util.c.o"
+  "CMakeFiles/CM.dir/main.c.o"
+  "CMakeFiles/CM.dir/analyze.c.o"
+  "CMakeFiles/CM.dir/symtab.c.o"
   "CM.pdb"
   "CM"
 )
