@@ -16,7 +16,7 @@ char tokenString[MAXTOKENLEN+1];
 
 void comment(void);
 void count(void);
-static int input (void );
+static int yyinput (void );
 
 %}
 
@@ -150,7 +150,7 @@ void comment(void)
 {
 	char c, prev = 0;
   
-	while ((c = input()) != 0)      /* (EOF maps to 0) */
+	while ((c = yyinput()) != 0)      /* (EOF maps to 0) */
 	{
 		if (c == '/' && prev == '*')
 			return;

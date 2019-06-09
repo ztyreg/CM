@@ -8,7 +8,7 @@
 
 #include "globals.h"
 #include "util.h"
-#include "y.tab.h"
+#include "tiny.tab.h"
 /* Procedure printToken prints a token 
  * and its lexeme to the listing file
  */

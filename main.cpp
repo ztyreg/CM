@@ -23,10 +23,11 @@
 #include "parse.h"
 #include "analyze.h"
 
+
 /* allocate global variables */
-//FILE * source;
-//FILE * listing;
-//FILE * code;
+FILE * source;
+FILE * listing;
+FILE * code;
 
 /* allocate and set tracing flags */
 int EchoSource = FALSE;
@@ -35,7 +36,7 @@ int TraceParse = TRUE;
 int TraceAnalyze = FALSE;
 int TraceCode = FALSE;
 
-//int Error = FALSE;
+int Error = FALSE;
 
 int main()
 {

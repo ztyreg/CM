@@ -54,3 +54,26 @@ To find the declaration of an identifier that is active at a program point:
 * Start from the current scope 
 
 * Go up in the hierarchy until you find an identifier with the same name, or fail 
+
+
+
+Symbol table
+ Set of symbol table items
+z searchable by name + scope
+ Data stored for each entry:
+z name
+z attributes
+ type
+(int, bool, array, ptr, function)
+ address
+(block, offset)
+ declared or not,
+used or not
+ ...
+ Operations
+z lookup ( name )
+z insert ( name )
+z put ( name, attribute, value )
+z get ( name, attribute)
+z enterscope ()
+z exitscope()

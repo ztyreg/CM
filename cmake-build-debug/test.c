@@ -1,3 +1,5 @@
+int x;
+
 int min(int u, int v)
 {
 	if (u < v) return u;
@@ -16,5 +18,5 @@ int main(void)
 		}
 	}
 	x = min(x, y);
-	return;
+	return 0;
 }

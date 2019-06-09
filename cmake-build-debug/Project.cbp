@@ -80,28 +80,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/analyze.c">
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/analyze.cpp">
 			<Option target="CM"/>
 		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/analyze.h">
 			<Option target="CM"/>
 		</Unit>
-		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/lex.yy.c">
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/lex.yy.cpp">
 			<Option target="CM"/>
 		</Unit>
-		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/main.c">
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/main.cpp">
 			<Option target="CM"/>
 		</Unit>
-		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/symtab.c">
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/symtab.cpp">
 			<Option target="CM"/>
 		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/symtab.h">
 			<Option target="CM"/>
 		</Unit>
-		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/tiny.tab.c">
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/tiny.tab.cpp">
 			<Option target="CM"/>
 		</Unit>
-		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/util.c">
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/util.cpp">
 			<Option target="CM"/>
 		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/util.h">

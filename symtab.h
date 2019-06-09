@@ -5,30 +5,44 @@
 #ifndef CM_SYMTAB_H
 #define CM_SYMTAB_H
 
+#include <vector>
+#include <string>
+
+using namespace std;
+
+/* SIZE is the size of the hash table */
+#define SIZE 211
+
 /*
- * Hash table implementation
+ * Tree-based implementation
+ * Linked list in each scope
  */
 
-typedef struct LinenoRec {
-    int lineno;
-    struct LinenoRec *next;
-
-} *Lineno;
-
 typedef struct SymtabRec {
-    char name[31]; //max name length: 31
+    explicit SymtabRec(const string& name) :
+    name(name), loc(-1), outer(nullptr), inner(nullptr) {}
+
+    string name;
     int loc; //memory location
-    Lineno linenoList;
-    struct SymtabRec *next;
+    vector<int> lineno; //occurrences
+    vector<struct SymtabRec *> symbols; //linked list
+    struct SymtabRec * outer; //outer scope
+    struct SymtabRec * inner; //if symbol is associated with an inner scope
 
 } *Symtab;
 
-void hash();
+static Symtab program = new SymtabRec((string &) "0"); //0 represents main
 
-void insert();
+//void hash();
 
-void lookup();
+void insert(string name);
 
-void create();
+void lookup(string name);
+
+void enterScope();
+
+void exitScope();
+
+void printSymtab(FILE *listing);
 
 #endif //CM_SYMTAB_H

@@ -69,7 +69,7 @@ var_declaration
 	  $$->child[0]=$1;
 	  $$->child[1]=$2;
 	  $$->child[2]=$4;
-	  $$->child[1]->attr.type="int*";
+	  $$->child[1]->attr.type=(char*)"int*";
 	 }
 	;
 var
@@ -77,17 +77,17 @@ var
 	|IDENTIFIER '[' expression ']'
 	{$$=$1;
 	 $$->sibling = $3;
-	 $$->attr.type="int*";
+	 $$->attr.type=(char*)"int*";
 	}
 	;
 data_type
 	:VOID
 	{$$ = newExpNode(TypeK);
-	 $$->attr.type = "void";
+	 $$->attr.type = (char*)"void";
 	}
 	|INT
 	{$$ = newExpNode(TypeK);
-	 $$->attr.type = "int";
+	 $$->attr.type = (char*)"int";
 	}
 	;
 fun_declaration
@@ -121,7 +121,7 @@ param
 	{$$ = newDeclNode(VarK);
 	 $$->child[0]=$1;
 	 $$->child[1]=$2;
-	 $$->child[1]->attr.type="int*";
+	 $$->child[1]->attr.type=(char*)"int*";
 	}
 	;
 compound_stmt
@@ -182,7 +182,7 @@ iteration_stmt
 	{$$ = newStmtNode(ItrK);
 	 $$->child[0] = $3;
 	 $$->child[1] = $5;
-	 $$->attr.type = "WHILE";
+	 $$->attr.type = (char*)"WHILE";
 	}
 	|FOR LPAREN expression expression expression RPAREN stmt
 	{$$ = newStmtNode(ItrK);
@@ -190,13 +190,13 @@ iteration_stmt
 	 $$->child[1] = $4;
 	 $$->child[2] = $5;
 	 $$->child[3] = $7;
-	 $$->attr.type = "FOR";
+	 $$->attr.type = (char*)"FOR";
 	}
 	|DO stmt WHILE LPAREN expression RPAREN
 	{$$ = newStmtNode(ItrK);
 	 $$->child[0] = $2;
 	 $$->child[1] = $5;
-	 $$->attr.type = "DO";
+	 $$->attr.type = (char*)"DO";
 	}
 	;
 return_stmt

@@ -1634,7 +1634,7 @@ yyreduce:
 	  (yyval)->child[0]=(yyvsp[(1) - (6)]);
 	  (yyval)->child[1]=(yyvsp[(2) - (6)]);
 	  (yyval)->child[2]=(yyvsp[(4) - (6)]);
-	  (yyval)->child[1]->attr.type="int*";
+	  (yyval)->child[1]->attr.type=(char*)"int*";
 	 ;}
     break;
 
@@ -1642,21 +1642,21 @@ yyreduce:
 #line 78 "tiny.y"
     {(yyval)=(yyvsp[(1) - (4)]);
 	 (yyval)->sibling = (yyvsp[(3) - (4)]);
-	 (yyval)->attr.type="int*";
+	 (yyval)->attr.type=(char*)"int*";
 	;}
     break;
 
   case 11:
 #line 85 "tiny.y"
     {(yyval) = newExpNode(TypeK);
-	 (yyval)->attr.type = "void";
+	 (yyval)->attr.type = (char*)"void";
 	;}
     break;
 
   case 12:
 #line 89 "tiny.y"
     {(yyval) = newExpNode(TypeK);
-	 (yyval)->attr.type = "int";
+	 (yyval)->attr.type = (char*)"int";
 	;}
     break;
 
@@ -1708,7 +1708,7 @@ yyreduce:
     {(yyval) = newDeclNode(VarK);
 	 (yyval)->child[0]=(yyvsp[(1) - (4)]);
 	 (yyval)->child[1]=(yyvsp[(2) - (4)]);
-	 (yyval)->child[1]->attr.type="int*";
+	 (yyval)->child[1]->attr.type=(char*)"int*";
 	;}
     break;
 
@@ -1803,7 +1803,7 @@ yyreduce:
     {(yyval) = newStmtNode(ItrK);
 	 (yyval)->child[0] = (yyvsp[(3) - (5)]);
 	 (yyval)->child[1] = (yyvsp[(5) - (5)]);
-	 (yyval)->attr.type = "WHILE";
+	 (yyval)->attr.type = (char*)"WHILE";
 	;}
     break;
 
@@ -1814,7 +1814,7 @@ yyreduce:
 	 (yyval)->child[1] = (yyvsp[(4) - (7)]);
 	 (yyval)->child[2] = (yyvsp[(5) - (7)]);
 	 (yyval)->child[3] = (yyvsp[(7) - (7)]);
-	 (yyval)->attr.type = "FOR";
+	 (yyval)->attr.type = (char*)"FOR";
 	;}
     break;
 
@@ -1823,7 +1823,7 @@ yyreduce:
     {(yyval) = newStmtNode(ItrK);
 	 (yyval)->child[0] = (yyvsp[(2) - (6)]);
 	 (yyval)->child[1] = (yyvsp[(5) - (6)]);
-	 (yyval)->attr.type = "DO";
+	 (yyval)->attr.type = (char*)"DO";
 	;}
     break;
 
@@ -2039,7 +2039,7 @@ yyerrlab:
     {
       ++yynerrs;
 #if ! YYERROR_VERBOSE
-      yyerror (YY_("syntax error"));
+      yyerror (YY_((char*)"syntax error"));
 #else
       {
 	YYSIZE_T yysize = yysyntax_error (0, yystate, yychar);
@@ -2185,7 +2185,7 @@ yyabortlab:
 | yyexhaustedlab -- memory exhaustion comes here.  |
 `-------------------------------------------------*/
 yyexhaustedlab:
-  yyerror (YY_("memory exhausted"));
+  yyerror (YY_((char*)"memory exhausted"));
   yyresult = 2;
   /* Fall through.  */
 #endif

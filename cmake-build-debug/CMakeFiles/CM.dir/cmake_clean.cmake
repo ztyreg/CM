@@ -1,15 +1,15 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CM.dir/lex.yy.c.o"
-  "CMakeFiles/CM.dir/tiny.tab.c.o"
-  "CMakeFiles/CM.dir/util.c.o"
-  "CMakeFiles/CM.dir/main.c.o"
-  "CMakeFiles/CM.dir/analyze.c.o"
-  "CMakeFiles/CM.dir/symtab.c.o"
+  "CMakeFiles/CM.dir/lex.yy.cpp.o"
+  "CMakeFiles/CM.dir/tiny.tab.cpp.o"
+  "CMakeFiles/CM.dir/util.cpp.o"
+  "CMakeFiles/CM.dir/main.cpp.o"
+  "CMakeFiles/CM.dir/analyze.cpp.o"
+  "CMakeFiles/CM.dir/symtab.cpp.o"
   "CM.pdb"
   "CM"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
+foreach(lang CXX)
   include(CMakeFiles/CM.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

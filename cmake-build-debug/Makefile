@@ -123,167 +123,167 @@ CM/fast:
 	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/build
 .PHONY : CM/fast
 
-analyze.o: analyze.c.o
+analyze.o: analyze.cpp.o
 
 .PHONY : analyze.o
 
 # target to build an object file
-analyze.c.o:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/analyze.c.o
-.PHONY : analyze.c.o
+analyze.cpp.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/analyze.cpp.o
+.PHONY : analyze.cpp.o
 
-analyze.i: analyze.c.i
+analyze.i: analyze.cpp.i
 
 .PHONY : analyze.i
 
 # target to preprocess a source file
-analyze.c.i:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/analyze.c.i
-.PHONY : analyze.c.i
+analyze.cpp.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/analyze.cpp.i
+.PHONY : analyze.cpp.i
 
-analyze.s: analyze.c.s
+analyze.s: analyze.cpp.s
 
 .PHONY : analyze.s
 
 # target to generate assembly for a file
-analyze.c.s:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/analyze.c.s
-.PHONY : analyze.c.s
+analyze.cpp.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/analyze.cpp.s
+.PHONY : analyze.cpp.s
 
-lex.yy.o: lex.yy.c.o
+lex.yy.o: lex.yy.cpp.o
 
 .PHONY : lex.yy.o
 
 # target to build an object file
-lex.yy.c.o:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex.yy.c.o
-.PHONY : lex.yy.c.o
+lex.yy.cpp.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex.yy.cpp.o
+.PHONY : lex.yy.cpp.o
 
-lex.yy.i: lex.yy.c.i
+lex.yy.i: lex.yy.cpp.i
 
 .PHONY : lex.yy.i
 
 # target to preprocess a source file
-lex.yy.c.i:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex.yy.c.i
-.PHONY : lex.yy.c.i
+lex.yy.cpp.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex.yy.cpp.i
+.PHONY : lex.yy.cpp.i
 
-lex.yy.s: lex.yy.c.s
+lex.yy.s: lex.yy.cpp.s
 
 .PHONY : lex.yy.s
 
 # target to generate assembly for a file
-lex.yy.c.s:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex.yy.c.s
-.PHONY : lex.yy.c.s
+lex.yy.cpp.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/lex.yy.cpp.s
+.PHONY : lex.yy.cpp.s
 
-main.o: main.c.o
+main.o: main.cpp.o
 
 .PHONY : main.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/main.c.o
-.PHONY : main.c.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-main.i: main.c.i
+main.i: main.cpp.i
 
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/main.c.s
-.PHONY : main.c.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/main.cpp.s
+.PHONY : main.cpp.s
 
-symtab.o: symtab.c.o
+symtab.o: symtab.cpp.o
 
 .PHONY : symtab.o
 
 # target to build an object file
-symtab.c.o:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/symtab.c.o
-.PHONY : symtab.c.o
+symtab.cpp.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/symtab.cpp.o
+.PHONY : symtab.cpp.o
 
-symtab.i: symtab.c.i
+symtab.i: symtab.cpp.i
 
 .PHONY : symtab.i
 
 # target to preprocess a source file
-symtab.c.i:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/symtab.c.i
-.PHONY : symtab.c.i
+symtab.cpp.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/symtab.cpp.i
+.PHONY : symtab.cpp.i
 
-symtab.s: symtab.c.s
+symtab.s: symtab.cpp.s
 
 .PHONY : symtab.s
 
 # target to generate assembly for a file
-symtab.c.s:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/symtab.c.s
-.PHONY : symtab.c.s
+symtab.cpp.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/symtab.cpp.s
+.PHONY : symtab.cpp.s
 
-tiny.tab.o: tiny.tab.c.o
+tiny.tab.o: tiny.tab.cpp.o
 
 .PHONY : tiny.tab.o
 
 # target to build an object file
-tiny.tab.c.o:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/tiny.tab.c.o
-.PHONY : tiny.tab.c.o
+tiny.tab.cpp.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/tiny.tab.cpp.o
+.PHONY : tiny.tab.cpp.o
 
-tiny.tab.i: tiny.tab.c.i
+tiny.tab.i: tiny.tab.cpp.i
 
 .PHONY : tiny.tab.i
 
 # target to preprocess a source file
-tiny.tab.c.i:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/tiny.tab.c.i
-.PHONY : tiny.tab.c.i
+tiny.tab.cpp.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/tiny.tab.cpp.i
+.PHONY : tiny.tab.cpp.i
 
-tiny.tab.s: tiny.tab.c.s
+tiny.tab.s: tiny.tab.cpp.s
 
 .PHONY : tiny.tab.s
 
 # target to generate assembly for a file
-tiny.tab.c.s:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/tiny.tab.c.s
-.PHONY : tiny.tab.c.s
+tiny.tab.cpp.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/tiny.tab.cpp.s
+.PHONY : tiny.tab.cpp.s
 
-util.o: util.c.o
+util.o: util.cpp.o
 
 .PHONY : util.o
 
 # target to build an object file
-util.c.o:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/util.c.o
-.PHONY : util.c.o
+util.cpp.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/util.cpp.o
+.PHONY : util.cpp.o
 
-util.i: util.c.i
+util.i: util.cpp.i
 
 .PHONY : util.i
 
 # target to preprocess a source file
-util.c.i:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/util.c.i
-.PHONY : util.c.i
+util.cpp.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/util.cpp.i
+.PHONY : util.cpp.i
 
-util.s: util.c.s
+util.s: util.cpp.s
 
 .PHONY : util.s
 
 # target to generate assembly for a file
-util.c.s:
-	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/util.c.s
-.PHONY : util.c.s
+util.cpp.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/util.cpp.s
+.PHONY : util.cpp.s
 
 # Help Target
 help:

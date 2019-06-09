@@ -37,8 +37,8 @@
 //   } ;
 typedef int TokenType;
 
-FILE* source; /* source code text file */
-FILE* listing; /* listing output text file */
+extern FILE* source; /* source code text file */
+extern FILE* listing; /* listing output text file */
 extern FILE* code; /* code text file for TM simulator */
 //int lineno=0; /* source line number for listing */
 extern int lineno;
@@ -104,5 +104,5 @@ extern int TraceCode;
 
 /* Error = TRUE prevents further passes if an error occurs */
 //extern int Error; 
-int Error;
+extern int Error;
 #endif
