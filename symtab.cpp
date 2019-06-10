@@ -12,7 +12,7 @@ void printSymtab(FILE *listing)
 //    fprintf(listing, "-------- --- ------------ --------\n");
     for ( Scope scopePtr = program;
           scopePtr != NULL;
-          scopePtr = scopePtr->outer) {
+          scopePtr = scopePtr->inner) {
         cout << "Level " << level << endl;
         cout << "name loc lineno" << endl;
         cout << "---------------" << endl;
@@ -23,6 +23,7 @@ void printSymtab(FILE *listing)
             }
             cout << endl;
         }
+        level++;
     }
 }
 
