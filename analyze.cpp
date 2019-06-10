@@ -7,12 +7,12 @@
 #include "symtab.h"
 #include "globals.h"
 
-#define VERBOSE 1
+
+using namespace std;
 
 /* pointer of the symtab */
 static int location = 0;
-
-using namespace std;
+static int skipOneEnter = FALSE;
 
 static void nullProc(TreeNode *t)
 {}
@@ -22,9 +22,6 @@ static void insertPost(TreeNode *t)
     if (t->nodekind == StmtK) {
         switch (t->kind.stmt) {
             case (CompK):
-#if VERBOSE
-                cout << "exit scope" << endl;
-#endif
                 exitScope(TRUE);
 
                 break;
@@ -51,10 +48,9 @@ static void insertPre(TreeNode *t)
     if (t->nodekind == StmtK) {
         switch (t->kind.stmt) {
             case (CompK):
-#if VERBOSE
-                cout << "enter scope" << endl;
-#endif
-                enterScope();
+                if (!skipOneEnter) // already entered scope in fun def
+                    enterScope();
+                skipOneEnter = FALSE;
 
                 break;
             default:
@@ -105,7 +101,8 @@ static void insertPre(TreeNode *t)
             }
             case (FuncK):
                 /* parameter list */
-                /* local */
+                enterScope();
+                skipOneEnter = TRUE;
                 break;
             default:
                 break;

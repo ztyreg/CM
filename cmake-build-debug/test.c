@@ -10,6 +10,7 @@ int main(void)
 {
 	int x;
 	int y;
+//    {int t;}
 	int z[3];
 	x = 1;
 	y = 1 + 2;

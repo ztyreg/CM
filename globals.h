@@ -22,6 +22,7 @@
 #define TRUE 1
 #endif
 
+#define VERBOSE 1
 /* MAXRESERVED = the number of reserved words */
 #define MAXRESERVED 8
 

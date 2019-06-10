@@ -21,6 +21,7 @@ CMakeFiles/CM.dir/main.cpp.o: ../symtab.h
 CMakeFiles/CM.dir/main.cpp.o: ../tiny.tab.h
 CMakeFiles/CM.dir/main.cpp.o: ../util.h
 
+CMakeFiles/CM.dir/symtab.cpp.o: ../globals.h
 CMakeFiles/CM.dir/symtab.cpp.o: ../symtab.cpp
 CMakeFiles/CM.dir/symtab.cpp.o: ../symtab.h
 

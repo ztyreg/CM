@@ -11,14 +11,14 @@ void printSymtab(FILE *listing)
 //    fprintf(listing, "\nVar Name Loc Line Numbers Children\n");
 //    fprintf(listing, "-------- --- ------------ --------\n");
     for ( Scope scopePtr = program;
-          scopePtr != nullptr;
+          scopePtr != NULL;
           scopePtr = scopePtr->outer) {
         cout << "Level " << level << endl;
         cout << "name loc lineno" << endl;
         cout << "---------------" << endl;
-        for (const auto &item : scopePtr->symbols) {
+        for (const Symbol &item : scopePtr->symbols) {
             cout << item->name << " " << item->location;
-            for (const auto &range : item->lineno) {
+            for (const int &range : item->lineno) {
                 cout << " " << range;
             }
             cout << endl;
@@ -28,7 +28,7 @@ void printSymtab(FILE *listing)
 
 lookupResult lookup(const string& name)
 {
-    for (const auto &item : currentScope->symbols) {
+    for (const Symbol &item : currentScope->symbols) {
         if (item->name == name) {
             return EXISTS_THIS;
         }
@@ -36,9 +36,9 @@ lookupResult lookup(const string& name)
 
     Scope scopePtr;
     for ( scopePtr = currentScope->outer;
-            scopePtr != nullptr;
-            scopePtr = scopePtr->outer) {
-        for (const auto &item : scopePtr->symbols) {
+          scopePtr != NULL;
+          scopePtr = scopePtr->outer) {
+        for (const Symbol &item : scopePtr->symbols) {
             if (item->name == name) {
                 return EXISTS_OUTER;
             }
@@ -53,7 +53,7 @@ void insert(const string& name, int line, int location, int length)
     Scope scopePtr;
     if (location != -1) {
         /* new */
-        auto symbol = (Symbol)malloc(sizeof(struct SymbolRec));
+        Symbol symbol = (Symbol)malloc(sizeof(struct SymbolRec));
         symbol->name = name;
         symbol->lineno.push_back(line);
         symbol->location = location;
@@ -64,9 +64,9 @@ void insert(const string& name, int line, int location, int length)
 
     /* exists */
     for ( scopePtr = currentScope;
-            scopePtr != nullptr;
-            scopePtr = scopePtr->outer) {
-        for (const auto &item : scopePtr->symbols) {
+          scopePtr != NULL;
+          scopePtr = scopePtr->outer) {
+        for (const Symbol &item : scopePtr->symbols) {
             if (item->name == name) {
                 item->lineno.push_back(line);
                 return;
@@ -80,7 +80,7 @@ void insert(const string& name, int line, int location, int length)
 
 void enterScope()
 {
-    auto innerScope = (Scope)malloc(sizeof(struct ScopeRec));
+    Scope innerScope = (Scope)malloc(sizeof(struct ScopeRec));
 
     currentScope->inner = innerScope;
     innerScope->outer = currentScope;
@@ -88,9 +88,9 @@ void enterScope()
 
 }
 
-void exitScope(int setNull)
+void exitScope(int setNULL)
 {
-    if (setNull) {
+    if (setNULL) {
         Scope holder = currentScope;
         currentScope = currentScope->outer;
         free(holder);
