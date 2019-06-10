@@ -1,6 +1,5 @@
 int x;
 
-int min(int u, int v);
 
 int min(int u, int v)
 {
@@ -12,8 +11,8 @@ int main(void)
 {
 	int x;
 	int y;
-    {int t;}
 	int z[3];
+    {int t;}
 	x = 1;
 	y = 1 + 2;
 	if (x < 3) {
