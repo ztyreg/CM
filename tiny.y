@@ -43,17 +43,17 @@ program
 	: declaration_list { savedTree = $1; }
 	;
 declaration_list
-	:declaration_list declaration 
+	:declaration_list declaration
 	 {YYSTYPE t = $1;
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
-	   t->sibling = $2; 
+	   t->sibling = $2;
 	   $$ = $1;
 	  }
 	 }
 	|declaration { $$ = $1; }
 	;
-declaration 
+declaration
 	:var_declaration { $$ = $1; }
 	|fun_declaration { $$ = $1; }
 	;
@@ -63,17 +63,17 @@ var_declaration
 	  $$->child[0]=$1;
 	  $$->child[1]=$2;
 	 }
-	|data_type IDENTIFIER 
+	|data_type IDENTIFIER
 	 '[' CONSTANT ']' SEMI
 	 {$$ = newDeclNode(VarK);
 	  $$->child[0]=$1;
 	  $$->child[1]=$2;
 	  $$->child[2]=$4;
-	  $$->child[1]->attr.type=(char*)"int*";
+	  $$->child[0]->attr.type=(char*)"int*";
 	 }
 	;
 var
-	:IDENTIFIER 
+	:IDENTIFIER
 	|IDENTIFIER '[' expression ']'
 	{$$=$1;
 	 $$->sibling = $3;
@@ -91,7 +91,7 @@ data_type
 	}
 	;
 fun_declaration
-	:data_type IDENTIFIER LPAREN params RPAREN 
+	:data_type IDENTIFIER LPAREN params RPAREN
 	{$$ = newDeclNode(FuncK);
 	  $$->child[0]=$1;
 	  $$->child[1]=$2;
@@ -104,7 +104,7 @@ params
 	{YYSTYPE t = $1;
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
-	   t->sibling = $3; 
+	   t->sibling = $3;
 	   $$ = $1;
 	  }
 	}
@@ -121,7 +121,7 @@ param
 	{$$ = newDeclNode(VarK);
 	 $$->child[0]=$1;
 	 $$->child[1]=$2;
-	 $$->child[1]->attr.type=(char*)"int*";
+	 $$->child[0]->attr.type=(char*)"int*";
 	}
 	;
 compound_stmt
@@ -136,7 +136,7 @@ local_declarations
 	{YYSTYPE t = $1;
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
-	   t->sibling = $2; 
+	   t->sibling = $2;
 	   $$ = $1;
 	  }
 	  else
@@ -151,7 +151,7 @@ stmt_list
 	{YYSTYPE t = $1;
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
-	   t->sibling = $2; 
+	   t->sibling = $2;
 	   $$ = $1;
 	  }
 	}
@@ -165,7 +165,7 @@ stmt
 	|return_stmt { $$ = $1; }
 	;
 selection_stmt
-	:IF LPAREN expression RPAREN stmt 
+	:IF LPAREN expression RPAREN stmt
 	{$$ = newStmtNode(IfK);
      $$->child[0] = $3;
      $$->child[1] = $5;
@@ -211,7 +211,7 @@ expression_stmt
 	|SEMI
 	;
 expression
-	:var EQ expression 
+	:var EQ expression
 	{$$ = newStmtNode(AssignK);
 	 $$->child[0]=$1;
 	 $$->child[1]=$3;
@@ -268,7 +268,7 @@ factor
 	:LPAREN expression RPAREN { $$ = $2; }
 	|var { $$ = $1; }
 	|call { $$ = $1; }
-	|CONSTANT 
+	|CONSTANT
 	|ERROR { $$ = NULL; }
 	;
 call
@@ -288,7 +288,7 @@ arg_list
 	{YYSTYPE t = $1;
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
-	   t->sibling = $3; 
+	   t->sibling = $3;
 	   $$ = $1;
 	  }
 	}

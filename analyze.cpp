@@ -2,26 +2,114 @@
 // Created by y on 2019-06-08.
 //
 
+#include <iostream>
 #include "analyze.h"
 #include "symtab.h"
 #include "globals.h"
 
+#define VERBOSE 1
+
 /* pointer of the symtab */
-static Symtab ptr = program;
+static int location = 0;
+
+using namespace std;
 
 static void nullProc(TreeNode *t)
+{}
+
+static void insertPost(TreeNode *t)
 {
+    if (t->nodekind == StmtK) {
+        switch (t->kind.stmt) {
+            case (CompK):
+#if VERBOSE
+                cout << "exit scope" << endl;
+#endif
+                exitScope(TRUE);
+
+                break;
+            default:
+                break;
+        }
+    }
 }
 
-static void insertNode(TreeNode *t)
+/**
+ * Inserts identifiers
+ * \ID
+ * var-declaration -> type-specifier ID ; | type-specifier ID [ NUM ] ;<br>
+ * fun-declaration -> type-specifier ID ( params ) compound-stmt<br>
+ * param -> type-specifier ID | type-specifier ID [ ]<br>
+ * var -> ID | ID [ expression ]<br>
+ * call -> ID ( args )<br>
+ * \Scope
+ * compound-stmt -> { local-declarations statement-list }<br>
+ * @param t AST
+ */
+static void insertPre(TreeNode *t)
 {
-    switch (t->nodekind) {
-        case (StmtK):
-            break;
-        case (ExpK):
-            break;
-        case (DeclK):
-            break;
+    if (t->nodekind == StmtK) {
+        switch (t->kind.stmt) {
+            case (CompK):
+#if VERBOSE
+                cout << "enter scope" << endl;
+#endif
+                enterScope();
+
+                break;
+            default:
+                break;
+        }
+    } else if (t->nodekind == ExpK) {
+        switch (t->kind.exp) {
+            case (OpK):
+                break;
+            default:
+                break;
+        }
+    } else if (t->nodekind == DeclK) {
+        switch (t->kind.decl) {
+            case (VarK): {
+                /* ID after a type-specifier */
+                string name = t->child[1]->attr.name;
+                string type = t->child[0]->attr.type;
+                int line = t->child[1]->lineno;
+                if (type == "int") {
+                    if (lookup(name) == NOT_EXIST) {
+#if VERBOSE
+                        cout << "new int " << name << endl;
+#endif
+                        insert(name, line, location++, 1);
+
+
+                    } else if (lookup(name) == EXISTS_OUTER) {
+#if VERBOSE
+                        cout << "overwrite int " << name << endl;
+#endif
+                        insert(name, line, location++, 1);
+
+                    } else if (lookup(name) == EXISTS_THIS) {
+#if VERBOSE
+                        cout << "redefine int " << name << endl;
+#endif
+                        cout << "Error: redefine symbol";
+
+                    }
+                } else if (type == "int*") {
+#if VERBOSE
+                    cout << "int* " << name << endl;
+#endif
+                }
+
+                break;
+            }
+            case (FuncK):
+                /* parameter list */
+                /* local */
+                break;
+            default:
+                break;
+        }
     }
 
 
@@ -52,13 +140,19 @@ static void traverse(
 
 void buildSymtab(TreeNode *t)
 {
-    traverse(t, insertNode, nullProc);
+#if VERBOSE
+    cout << "\nBuild symtab start ..." << endl;
+#endif
+    traverse(t, insertPre, insertPost);
     printSymtab(listing);
 
 }
 
 void typeCheck(TreeNode *t)
 {
+#if VERBOSE
+    cout << "\nType check start ..." << endl;
+#endif
     traverse(t, nullProc, checkNode);
 
 }

@@ -1599,7 +1599,7 @@ yyreduce:
     {YYSTYPE t = (yyvsp[(1) - (2)]);
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
-	   t->sibling = (yyvsp[(2) - (2)]); 
+	   t->sibling = (yyvsp[(2) - (2)]);
 	   (yyval) = (yyvsp[(1) - (2)]);
 	  }
 	 ;}
@@ -1634,7 +1634,7 @@ yyreduce:
 	  (yyval)->child[0]=(yyvsp[(1) - (6)]);
 	  (yyval)->child[1]=(yyvsp[(2) - (6)]);
 	  (yyval)->child[2]=(yyvsp[(4) - (6)]);
-	  (yyval)->child[1]->attr.type=(char*)"int*";
+	  (yyval)->child[0]->attr.type=(char*)"int*";
 	 ;}
     break;
 
@@ -1679,7 +1679,7 @@ yyreduce:
     {YYSTYPE t = (yyvsp[(1) - (3)]);
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
-	   t->sibling = (yyvsp[(3) - (3)]); 
+	   t->sibling = (yyvsp[(3) - (3)]);
 	   (yyval) = (yyvsp[(1) - (3)]);
 	  }
 	;}
@@ -1708,7 +1708,7 @@ yyreduce:
     {(yyval) = newDeclNode(VarK);
 	 (yyval)->child[0]=(yyvsp[(1) - (4)]);
 	 (yyval)->child[1]=(yyvsp[(2) - (4)]);
-	 (yyval)->child[1]->attr.type=(char*)"int*";
+	 (yyval)->child[0]->attr.type=(char*)"int*";
 	;}
     break;
 
@@ -1725,7 +1725,7 @@ yyreduce:
     {YYSTYPE t = (yyvsp[(1) - (2)]);
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
-	   t->sibling = (yyvsp[(2) - (2)]); 
+	   t->sibling = (yyvsp[(2) - (2)]);
 	   (yyval) = (yyvsp[(1) - (2)]);
 	  }
 	  else
@@ -1745,7 +1745,7 @@ yyreduce:
     {YYSTYPE t = (yyvsp[(1) - (2)]);
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
-	   t->sibling = (yyvsp[(2) - (2)]); 
+	   t->sibling = (yyvsp[(2) - (2)]);
 	   (yyval) = (yyvsp[(1) - (2)]);
 	  }
 	;}
@@ -1990,7 +1990,7 @@ yyreduce:
     {YYSTYPE t = (yyvsp[(1) - (3)]);
 	  if (t != NULL)
 	  {while (t->sibling != NULL) t = t->sibling;
-	   t->sibling = (yyvsp[(3) - (3)]); 
+	   t->sibling = (yyvsp[(3) - (3)]);
 	   (yyval) = (yyvsp[(1) - (3)]);
 	  }
 	;}
@@ -2039,7 +2039,7 @@ yyerrlab:
     {
       ++yynerrs;
 #if ! YYERROR_VERBOSE
-      yyerror (YY_((char*)"syntax error"));
+      yyerror (YY_("syntax error"));
 #else
       {
 	YYSIZE_T yysize = yysyntax_error (0, yystate, yychar);
@@ -2185,7 +2185,7 @@ yyabortlab:
 | yyexhaustedlab -- memory exhaustion comes here.  |
 `-------------------------------------------------*/
 yyexhaustedlab:
-  yyerror (YY_((char*)"memory exhausted"));
+  yyerror (YY_("memory exhausted"));
   yyresult = 2;
   /* Fall through.  */
 #endif

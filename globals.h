@@ -48,6 +48,7 @@ extern int lineno;
 /**************************************************/
 
 typedef enum {StmtK,ExpK,DeclK} NodeKind;
+/* not used: repeat, read, write */
 typedef enum {IfK,RepeatK,AssignK,ReadK,WriteK,CompK,ItrK,RetK,CallK} StmtKind;
 typedef enum {OpK,ConstK,IdK,TypeK} ExpKind;
 typedef enum {VarK,FuncK} DeclKind;
@@ -63,10 +64,7 @@ typedef struct treeNode {
     int lineno;
     NodeKind nodekind;
     union { StmtKind stmt; ExpKind exp; DeclKind decl;} kind;
-    union { TokenType op;
-         int val;
-         char * name;
-         char * type;} attr;
+    union { TokenType op; int val; char * name; char * type;} attr;
     ExpType type; /* for type checking of exps */
 } TreeNode;
 

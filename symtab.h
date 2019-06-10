@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <string>
+#include "globals.h"
 
 using namespace std;
 
@@ -18,31 +19,42 @@ using namespace std;
  * Linked list in each scope
  */
 
-typedef struct SymtabRec {
-    explicit SymtabRec(const string& name) :
-    name(name), loc(-1), outer(nullptr), inner(nullptr) {}
-
+typedef struct SymbolRec {
     string name;
-    int loc; //memory location
+    int location; //memory location
+    int length;
     vector<int> lineno; //occurrences
-    vector<struct SymtabRec *> symbols; //linked list
-    struct SymtabRec * outer; //outer scope
-    struct SymtabRec * inner; //if symbol is associated with an inner scope
 
-} *Symtab;
+} * Symbol;
 
-static Symtab program = new SymtabRec((string &) "0"); //0 represents main
+typedef struct ScopeRec {
+    ScopeRec() : outer(nullptr), inner(nullptr) {}
+
+    vector<Symbol> symbols;
+    struct ScopeRec * outer; //outer scope
+    struct ScopeRec * inner; //if symbol is associated with an inner scope
+
+} *Scope;
+
+//0 represents the program
+static Scope program = (Scope)malloc(sizeof(struct ScopeRec));
+static Scope currentScope = program;
+
+typedef enum {EXISTS_OUTER, EXISTS_THIS, NOT_EXIST} lookupResult;
+
 
 //void hash();
 
-void insert(string name);
+void insert(const string& name, int line, int location, int length);
 
-void lookup(string name);
+lookupResult lookup(const string& name);
 
 void enterScope();
 
-void exitScope();
+void exitScope(int setNull);
 
 void printSymtab(FILE *listing);
+
+void printProgram();
 
 #endif //CM_SYMTAB_H
