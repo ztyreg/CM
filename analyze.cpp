@@ -122,7 +122,7 @@ static void traverse(
         void (*preProc)(TreeNode *),
         void (*postProc)(TreeNode *))
 {
-    if (t != nullptr) {
+    if (t != NULL) {
         preProc(t);
         {
             int i;

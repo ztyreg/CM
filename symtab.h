@@ -28,7 +28,7 @@ typedef struct SymbolRec {
 } * Symbol;
 
 typedef struct ScopeRec {
-    ScopeRec() : outer(nullptr), inner(nullptr) {}
+    ScopeRec() : outer(NULL), inner(NULL) {}
 
     vector<Symbol> symbols;
     struct ScopeRec * outer; //outer scope
