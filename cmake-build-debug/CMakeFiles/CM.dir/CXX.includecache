@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/zty/Documents/Courses/Compiler/CM/analyze.cpp
+iostream
+-
+analyze.h
+/Users/zty/Documents/Courses/Compiler/CM/analyze.h
+symtab.h
+/Users/zty/Documents/Courses/Compiler/CM/symtab.h
+globals.h
+/Users/zty/Documents/Courses/Compiler/CM/globals.h
+
+/Users/zty/Documents/Courses/Compiler/CM/analyze.h
+globals.h
+/Users/zty/Documents/Courses/Compiler/CM/globals.h
+symtab.h
+/Users/zty/Documents/Courses/Compiler/CM/symtab.h
+
+/Users/zty/Documents/Courses/Compiler/CM/globals.h
+stdio.h
+-
+stdlib.h
+-
+ctype.h
+-
+string.h
+-
+
+/Users/zty/Documents/Courses/Compiler/CM/symtab.h
+vector
+-
+string
+-
+globals.h
+/Users/zty/Documents/Courses/Compiler/CM/globals.h
+

@@ -70,32 +70,40 @@ static void insertPre(TreeNode *t)
                 string name = t->child[1]->attr.name;
                 string type = t->child[0]->attr.type;
                 int line = t->child[1]->lineno;
-                if (type == "int") {
-                    if (lookup(name) == NOT_EXIST) {
+                if (lookup(name) == NOT_EXIST) {
 #if VERBOSE
-                        cout << "new int " << name << endl;
+                    cout << "new " << type << " " << name << endl;
 #endif
+                    if (type == "int") {
                         insert(name, line, location++, 1);
+                    } else if (type == "int*") {
+                        int len = t->child[2]->attr.val;
 
-
-                    } else if (lookup(name) == EXISTS_OUTER) {
-#if VERBOSE
-                        cout << "overwrite int " << name << endl;
-#endif
-                        insert(name, line, location++, 1);
-
-                    } else if (lookup(name) == EXISTS_THIS) {
-#if VERBOSE
-                        cout << "redefine int " << name << endl;
-#endif
-                        cout << "Error: redefine symbol";
-
+                        insert(name, line, location, len);
+                        location += len;
                     }
-                } else if (type == "int*") {
+
+
+                } else if (lookup(name) == EXISTS_OUTER) {
 #if VERBOSE
-                    cout << "int* " << name << endl;
+                    cout << "overwrite " << type << " " << name << endl;
 #endif
+                    if (type == "int") {
+                        insert(name, line, location++, 1);
+                    } else if (type == "int*") {
+                        int len = t->child[2]->attr.val;
+
+                        insert(name, line, location, len);
+                        location += len;
+                    }
+
+                } else if (lookup(name) == EXISTS_THIS) {
+#if VERBOSE
+                    cout << "redefine " << name << endl;
+#endif
+                    cout << "Error: redefine symbol" << endl;
                 }
+
 
                 break;
             }
@@ -117,20 +125,17 @@ static void checkNode(TreeNode *t)
 
 }
 
-static void traverse(
-        TreeNode *t,
-        void (*preProc)(TreeNode *),
-        void (*postProc)(TreeNode *))
+static void insertTraverse( TreeNode *t)
 {
     if (t != NULL) {
-        preProc(t);
+        insertPre(t);
         {
             int i;
             for (i = 0; i < MAXCHILDREN; i++)
-                traverse(t->child[i], preProc, postProc);
+                insertTraverse(t->child[i]);
         }
-        postProc(t);
-        traverse(t->sibling, preProc, postProc);
+        insertPost(t);
+        insertTraverse(t->sibling);
     }
 
 }
@@ -140,8 +145,8 @@ void buildSymtab(TreeNode *t)
 #if VERBOSE
     cout << "\nBuild symtab start ..." << endl;
 #endif
-    traverse(t, insertPre, insertPost);
-    printSymtab(listing);
+    insertTraverse(t);
+//    printSymtab(listing);
 
 }
 
@@ -150,6 +155,6 @@ void typeCheck(TreeNode *t)
 #if VERBOSE
     cout << "\nType check start ..." << endl;
 #endif
-    traverse(t, nullProc, checkNode);
+//    traverse(t, nullProc, checkNode);
 
 }

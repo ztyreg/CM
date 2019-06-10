@@ -12,10 +12,11 @@ int main(void)
 	int x;
 	int y;
 	int z[3];
-    {int t;}
+    int t;
 	x = 1;
 	y = 1 + 2;
 	if (x < 3) {
+	    int t;
 		while (y > 0) {
 			y = y - 1;
 		}
