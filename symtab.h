@@ -19,22 +19,20 @@ using namespace std;
  * Linked list in each scope
  */
 
-static Scope currentScope = program;
 
 typedef enum {EXISTS_OUTER, EXISTS_THIS, NOT_EXIST} lookupResult;
 
-
 //void hash();
 
-void insert(const string& name, int line, int location, int length);
+Scope * insert(const string &name, int line, int location, int length, Scope *sp);
 
-lookupResult lookup(const string& name);
+lookupResult lookup(const string& name, Scope *currentScope);
 
-void enterScope();
+Scope * enterScope(Scope *sp);
 
-void exitScope();
+Scope * exitScope(Scope *sp);
 
-void printSymtab(Scope scopePtr);
+void printSymtab(Scope *scopePtr);
 
 void printProgram();
 

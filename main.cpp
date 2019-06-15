@@ -19,7 +19,6 @@
 FILE *source;
 FILE *listing;
 ofstream code;
-Symtab program = (Scope)malloc(sizeof(struct ScopeRec));
 
 int Error = FALSE;
 
@@ -44,7 +43,8 @@ int main()
 
 
     // analyze
-    buildSymtab(t);
+    Scope *program;
+    program = buildSymtab(t);
     typeCheck(t);
     printSymtab(program);
 

@@ -8,14 +8,14 @@
 // for printSymtab
 int level = 0;
 
-void printSymtab(Scope scopePtr)
+void printSymtab(Scope *scopePtr)
 {
     if (scopePtr == NULL) return;
 
     cout << "\nLevel " << level << endl;
     cout << "---------------" << endl;
 
-    for (const Symbol &item : scopePtr->symbols) {
+    for (Symbol *item : scopePtr->symbols) {
         cout << item->name << " " << item->location;
         for (const int &range : item->lineno) {
             cout << " " << range;
@@ -24,7 +24,7 @@ void printSymtab(Scope scopePtr)
     }
 
     level++;
-    for (const Scope &item : scopePtr->inner) {
+    for (Scope *item : scopePtr->inner) {
         printSymtab(item);
     }
     level--;
@@ -32,19 +32,19 @@ void printSymtab(Scope scopePtr)
     cout << "------end------" << endl;
 }
 
-lookupResult lookup(const string& name)
+lookupResult lookup(const string& name, Scope *currentScope)
 {
-    for (const Symbol &item : currentScope->symbols) {
+    for (Symbol *item : currentScope->symbols) {
         if (item->name == name) {
             return EXISTS_THIS;
         }
     }
 
-    Scope scopePtr;
+    Scope *scopePtr;
     for ( scopePtr = currentScope->outer;
           scopePtr != NULL;
           scopePtr = scopePtr->outer) {
-        for (const Symbol &item : scopePtr->symbols) {
+        for (Symbol *item : scopePtr->symbols) {
             if (item->name == name) {
                 return EXISTS_OUTER;
             }
@@ -53,52 +53,54 @@ lookupResult lookup(const string& name)
     return NOT_EXIST;
 }
 
-void insert(const string& name, int line, int location, int length)
+Scope * insert(const string &name, int line, int location, int length, Scope *sp)
 {
-    Symbol symbolPtr;
-    Scope scopePtr;
     if (location != -1) {
         /* new */
-        Symbol symbol = (Symbol)malloc(sizeof(struct SymbolRec));
+        Symbol *symbol = new Symbol();
         symbol->name = name;
         symbol->lineno.push_back(line);
         symbol->location = location;
         symbol->length = length;
-        currentScope->symbols.push_back(symbol);
+        sp->symbols.push_back(symbol);
 
-        return;
+        return sp;
     }
 
     /* exists */
-    for ( scopePtr = currentScope;
+    Scope *scopePtr;
+    for ( scopePtr = sp;
           scopePtr != NULL;
           scopePtr = scopePtr->outer) {
-        for (const Symbol &item : scopePtr->symbols) {
+        for (Symbol *item : scopePtr->symbols) {
             if (item->name == name) {
                 item->lineno.push_back(line);
-                return;
+                return sp;
             }
         }
     }
 
 
+    return sp;
 }
 
-void enterScope()
+Scope * enterScope(Scope *sp)
 {
     cout << "enter scope" << endl;
 
-    Scope innerScope = (Scope)malloc(sizeof(struct ScopeRec));
+    Scope *innerScope = new Scope();
 
-    currentScope->inner.push_back(innerScope);
-    innerScope->outer = currentScope;
-    currentScope = innerScope;
+    sp->inner.push_back(innerScope);
+    innerScope->outer = sp;
+    sp = innerScope;
+    return sp;
 
 }
 
-void exitScope()
+Scope * exitScope(Scope *sp)
 {
     cout << "exit scope" << endl;
-    currentScope = currentScope->outer;
+    sp = sp->outer;
+    return sp;
 }
 /* printSymtab */

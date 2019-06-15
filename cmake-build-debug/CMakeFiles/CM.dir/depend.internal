@@ -6,6 +6,14 @@ CMakeFiles/CM.dir/analyze.cpp.o
  /Users/zty/Documents/Courses/Compiler/CM/analyze.h
  /Users/zty/Documents/Courses/Compiler/CM/globals.h
  /Users/zty/Documents/Courses/Compiler/CM/symtab.h
+CMakeFiles/CM.dir/code.cpp.o
+ /Users/zty/Documents/Courses/Compiler/CM/code.cpp
+ /Users/zty/Documents/Courses/Compiler/CM/code.h
+ /Users/zty/Documents/Courses/Compiler/CM/globals.h
+CMakeFiles/CM.dir/codeUtil.cpp.o
+ /Users/zty/Documents/Courses/Compiler/CM/codeUtil.cpp
+ /Users/zty/Documents/Courses/Compiler/CM/codeUtil.h
+ /Users/zty/Documents/Courses/Compiler/CM/globals.h
 CMakeFiles/CM.dir/lex.yy.cpp.o
  /Users/zty/Documents/Courses/Compiler/CM/globals.h
  /Users/zty/Documents/Courses/Compiler/CM/lex.yy.cpp
@@ -14,6 +22,7 @@ CMakeFiles/CM.dir/lex.yy.cpp.o
  /Users/zty/Documents/Courses/Compiler/CM/util.h
 CMakeFiles/CM.dir/main.cpp.o
  /Users/zty/Documents/Courses/Compiler/CM/analyze.h
+ /Users/zty/Documents/Courses/Compiler/CM/code.h
  /Users/zty/Documents/Courses/Compiler/CM/globals.h
  /Users/zty/Documents/Courses/Compiler/CM/main.cpp
  /Users/zty/Documents/Courses/Compiler/CM/parse.h

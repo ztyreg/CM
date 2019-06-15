@@ -74,27 +74,24 @@ typedef struct treeNode {
     ExpType type; /* for type checking of exps */
 } TreeNode;
 
-typedef struct SymbolRec {
+class Symbol {
+public:
     string name;
     int location; //memory location
     int length;
     vector<int> lineno; //occurrences
 
-} *Symbol;
+};
 
-typedef struct ScopeRec {
-    ScopeRec() : outer(NULL) {}
+class Scope {
+private:
 
-    vector<Symbol> symbols;
-    struct ScopeRec *outer;
-    vector<struct ScopeRec *> inner;
-//    struct ScopeRec *inner;
-
-} *Scope;
-
-typedef Scope Symtab;
-
-extern Symtab program;
+public:
+    Scope() : outer(NULL) {}
+    vector<Symbol *> symbols;
+    Scope *outer;
+    vector<Scope *> inner;
+};
 
 extern int Error;
 

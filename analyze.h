@@ -8,7 +8,7 @@
 #include "globals.h"
 #include "symtab.h"
 
-Symtab buildSymtab(TreeNode *t);
+Scope * buildSymtab(TreeNode *t);
 
 void typeCheck(TreeNode * t);
 

@@ -12,6 +12,8 @@ using namespace std;
 /* pointer of the symtab */
 static int location = 0;
 static int skipOneEnter = FALSE;
+Scope *program = new Scope();
+Scope *sp = program;
 
 static void nullProc(TreeNode *t)
 {}
@@ -21,7 +23,7 @@ static void insertPost(TreeNode *t)
     if (t->nodekind == StmtK) {
         switch (t->kind.stmt) {
             case (CompK):
-                exitScope();
+                sp = exitScope(sp);
 
                 break;
             default:
@@ -48,7 +50,7 @@ static void insertPre(TreeNode *t)
         switch (t->kind.stmt) {
             case (CompK):
                 if (!skipOneEnter) // already entered scope in fun def
-                    enterScope();
+                    sp = enterScope(sp);
                 skipOneEnter = FALSE;
 
                 break;
@@ -69,30 +71,30 @@ static void insertPre(TreeNode *t)
                 string name = t->child[1]->attr.name;
                 string type = t->child[0]->attr.type;
                 int line = t->child[1]->lineno;
-                if (lookup(name) == NOT_EXIST) {
+                if (lookup(name, sp) == NOT_EXIST) {
                     cout << "new " << type << " " << name << endl;
                     if (type == "int") {
-                        insert(name, line, location++, 1);
+                        sp = insert(name, line, location++, 1, sp);
                     } else if (type == "int*") {
                         int len = t->child[2]->attr.val;
 
-                        insert(name, line, location, len);
+                        sp = insert(name, line, location, len, sp);
                         location += len;
                     }
 
 
-                } else if (lookup(name) == EXISTS_OUTER) {
+                } else if (lookup(name, sp) == EXISTS_OUTER) {
                     cout << "overwrite " << type << " " << name << endl;
                     if (type == "int") {
-                        insert(name, line, location++, 1);
+                        sp = insert(name, line, location++, 1, sp);
                     } else if (type == "int*") {
                         int len = t->child[2]->attr.val;
 
-                        insert(name, line, location, len);
+                        sp = insert(name, line, location, len, sp);
                         location += len;
                     }
 
-                } else if (lookup(name) == EXISTS_THIS) {
+                } else if (lookup(name, sp) == EXISTS_THIS) {
                     cout << "redefine " << name << endl;
                     cerr << "Error: redefine symbol" << endl;
                 }
@@ -102,7 +104,7 @@ static void insertPre(TreeNode *t)
             }
             case (FuncK):
                 /* parameter list */
-                enterScope();
+                sp = enterScope(sp);
                 skipOneEnter = TRUE;
                 break;
             default:
@@ -133,13 +135,13 @@ static void insertTraverse( TreeNode *t)
 
 }
 
-Symtab buildSymtab(TreeNode *t)
+Scope * buildSymtab(TreeNode *t)
 {
     cout << "\nBuild symtab start ..." << endl;
     insertTraverse(t);
 //    printSymtab(listing);
-
     return program;
+
 }
 
 void typeCheck(TreeNode *t)
