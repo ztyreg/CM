@@ -36,8 +36,10 @@ typedef struct ScopeRec {
 
 } *Scope;
 
+typedef Scope Symtab;
+
 //0 represents the program
-static Scope program = (Scope)malloc(sizeof(struct ScopeRec));
+static Symtab program = (Scope)malloc(sizeof(struct ScopeRec));
 static Scope currentScope = program;
 
 typedef enum {EXISTS_OUTER, EXISTS_THIS, NOT_EXIST} lookupResult;

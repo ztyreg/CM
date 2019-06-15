@@ -7,7 +7,6 @@
 #include "symtab.h"
 #include "globals.h"
 
-
 using namespace std;
 
 /* pointer of the symtab */
@@ -101,7 +100,7 @@ static void insertPre(TreeNode *t)
 #if VERBOSE
                     cout << "redefine " << name << endl;
 #endif
-                    cout << "Error: redefine symbol" << endl;
+                    cerr << "Error: redefine symbol" << endl;
                 }
 
 
@@ -140,7 +139,7 @@ static void insertTraverse( TreeNode *t)
 
 }
 
-void buildSymtab(TreeNode *t)
+Symtab buildSymtab(TreeNode *t)
 {
 #if VERBOSE
     cout << "\nBuild symtab start ..." << endl;
@@ -148,6 +147,7 @@ void buildSymtab(TreeNode *t)
     insertTraverse(t);
 //    printSymtab(listing);
 
+    return program;
 }
 
 void typeCheck(TreeNode *t)

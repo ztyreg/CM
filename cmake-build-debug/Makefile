@@ -150,6 +150,60 @@ analyze.cpp.s:
 	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/analyze.cpp.s
 .PHONY : analyze.cpp.s
 
+code.o: code.cpp.o
+
+.PHONY : code.o
+
+# target to build an object file
+code.cpp.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/code.cpp.o
+.PHONY : code.cpp.o
+
+code.i: code.cpp.i
+
+.PHONY : code.i
+
+# target to preprocess a source file
+code.cpp.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/code.cpp.i
+.PHONY : code.cpp.i
+
+code.s: code.cpp.s
+
+.PHONY : code.s
+
+# target to generate assembly for a file
+code.cpp.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/code.cpp.s
+.PHONY : code.cpp.s
+
+codeUtil.o: codeUtil.cpp.o
+
+.PHONY : codeUtil.o
+
+# target to build an object file
+codeUtil.cpp.o:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/codeUtil.cpp.o
+.PHONY : codeUtil.cpp.o
+
+codeUtil.i: codeUtil.cpp.i
+
+.PHONY : codeUtil.i
+
+# target to preprocess a source file
+codeUtil.cpp.i:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/codeUtil.cpp.i
+.PHONY : codeUtil.cpp.i
+
+codeUtil.s: codeUtil.cpp.s
+
+.PHONY : codeUtil.s
+
+# target to generate assembly for a file
+codeUtil.cpp.s:
+	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/codeUtil.cpp.s
+.PHONY : codeUtil.cpp.s
+
 lex.yy.o: lex.yy.cpp.o
 
 .PHONY : lex.yy.o
@@ -297,6 +351,12 @@ help:
 	@echo "... analyze.o"
 	@echo "... analyze.i"
 	@echo "... analyze.s"
+	@echo "... code.o"
+	@echo "... code.i"
+	@echo "... code.s"
+	@echo "... codeUtil.o"
+	@echo "... codeUtil.i"
+	@echo "... codeUtil.s"
 	@echo "... lex.yy.o"
 	@echo "... lex.yy.i"
 	@echo "... lex.yy.s"

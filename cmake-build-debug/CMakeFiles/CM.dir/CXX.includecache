@@ -6,21 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/Users/zty/Documents/Courses/Compiler/CM/analyze.cpp
+/Users/zty/Documents/Courses/Compiler/CM/analyze.h
+globals.h
+/Users/zty/Documents/Courses/Compiler/CM/globals.h
+symtab.h
+/Users/zty/Documents/Courses/Compiler/CM/symtab.h
+
+/Users/zty/Documents/Courses/Compiler/CM/code.cpp
 iostream
 -
-analyze.h
-/Users/zty/Documents/Courses/Compiler/CM/analyze.h
-symtab.h
-/Users/zty/Documents/Courses/Compiler/CM/symtab.h
-globals.h
-/Users/zty/Documents/Courses/Compiler/CM/globals.h
+code.h
+/Users/zty/Documents/Courses/Compiler/CM/code.h
 
-/Users/zty/Documents/Courses/Compiler/CM/analyze.h
+/Users/zty/Documents/Courses/Compiler/CM/code.h
 globals.h
 /Users/zty/Documents/Courses/Compiler/CM/globals.h
-symtab.h
-/Users/zty/Documents/Courses/Compiler/CM/symtab.h
+string
+-
 
 /Users/zty/Documents/Courses/Compiler/CM/globals.h
 stdio.h
@@ -32,6 +34,26 @@ ctype.h
 string.h
 -
 
+/Users/zty/Documents/Courses/Compiler/CM/main.cpp
+globals.h
+/Users/zty/Documents/Courses/Compiler/CM/globals.h
+tiny.tab.h
+/Users/zty/Documents/Courses/Compiler/CM/tiny.tab.h
+util.h
+/Users/zty/Documents/Courses/Compiler/CM/util.h
+scan.h
+/Users/zty/Documents/Courses/Compiler/CM/scan.h
+parse.h
+/Users/zty/Documents/Courses/Compiler/CM/parse.h
+analyze.h
+/Users/zty/Documents/Courses/Compiler/CM/analyze.h
+code.h
+/Users/zty/Documents/Courses/Compiler/CM/code.h
+
+/Users/zty/Documents/Courses/Compiler/CM/parse.h
+
+/Users/zty/Documents/Courses/Compiler/CM/scan.h
+
 /Users/zty/Documents/Courses/Compiler/CM/symtab.h
 vector
 -
@@ -39,4 +61,8 @@ string
 -
 globals.h
 /Users/zty/Documents/Courses/Compiler/CM/globals.h
+
+/Users/zty/Documents/Courses/Compiler/CM/tiny.tab.h
+
+/Users/zty/Documents/Courses/Compiler/CM/util.h
 

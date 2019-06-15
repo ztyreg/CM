@@ -86,6 +86,18 @@
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/analyze.h">
 			<Option target="CM"/>
 		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/code.cpp">
+			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/code.h">
+			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/codeUtil.cpp">
+			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/codeUtil.h">
+			<Option target="CM"/>
+		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/lex.yy.cpp">
 			<Option target="CM"/>
 		</Unit>

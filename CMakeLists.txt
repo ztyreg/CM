@@ -1,3 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
-add_executable(CM lex.yy.cpp tiny.tab.cpp util.cpp main.cpp analyze.cpp symtab.cpp)
+set(CMAKE_CXX_STANDARD 11)
+
+file(GLOB src *.cpp)
+add_executable(CM ${src})
 configure_file(test.c test.c COPYONLY)
