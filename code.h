@@ -10,6 +10,6 @@
 
 using namespace std;
 
-void generateCode(TreeNode *syntaxTree, string fileName);
+void generateCode(TreeNode *syntaxTree);
 
 #endif //CM_CODE_H

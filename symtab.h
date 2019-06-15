@@ -19,27 +19,6 @@ using namespace std;
  * Linked list in each scope
  */
 
-typedef struct SymbolRec {
-    string name;
-    int location; //memory location
-    int length;
-    vector<int> lineno; //occurrences
-
-} * Symbol;
-
-typedef struct ScopeRec {
-    ScopeRec() : outer(NULL), inner(NULL) {}
-
-    vector<Symbol> symbols;
-    struct ScopeRec * outer; //outer scope
-    struct ScopeRec * inner; //if symbol is associated with an inner scope
-
-} *Scope;
-
-typedef Scope Symtab;
-
-//0 represents the program
-static Symtab program = (Scope)malloc(sizeof(struct ScopeRec));
 static Scope currentScope = program;
 
 typedef enum {EXISTS_OUTER, EXISTS_THIS, NOT_EXIST} lookupResult;
@@ -53,9 +32,9 @@ lookupResult lookup(const string& name);
 
 void enterScope();
 
-void exitScope(int setNull);
+void exitScope();
 
-void printSymtab(FILE *listing);
+void printSymtab(Scope scopePtr);
 
 void printProgram();
 

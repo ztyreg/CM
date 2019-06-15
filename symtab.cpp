@@ -5,27 +5,30 @@
 #include <iostream>
 #include "symtab.h"
 
-void printSymtab(FILE *listing)
+// for printSymtab
+int level = 0;
+
+void printSymtab(Scope scopePtr)
 {
-    int level = 0;
-//    fprintf(listing, "\nVar Name Loc Line Numbers Children\n");
-//    fprintf(listing, "-------- --- ------------ --------\n");
-    cout << "-----start-----" << endl;
-    for ( Scope scopePtr = program;
-          scopePtr != NULL;
-          scopePtr = scopePtr->inner) {
-        cout << "\nLevel " << level << endl;
-        cout << "---------------" << endl;
-        cout << "name loc lineno" << endl;
-        for (const Symbol &item : scopePtr->symbols) {
-            cout << item->name << " " << item->location;
-            for (const int &range : item->lineno) {
-                cout << " " << range;
-            }
-            cout << endl;
+    if (scopePtr == NULL) return;
+
+    cout << "\nLevel " << level << endl;
+    cout << "---------------" << endl;
+
+    for (const Symbol &item : scopePtr->symbols) {
+        cout << item->name << " " << item->location;
+        for (const int &range : item->lineno) {
+            cout << " " << range;
         }
-        level++;
+        cout << endl;
     }
+
+    level++;
+    for (const Scope &item : scopePtr->inner) {
+        printSymtab(item);
+    }
+    level--;
+
     cout << "------end------" << endl;
 }
 
@@ -62,9 +65,6 @@ void insert(const string& name, int line, int location, int length)
         symbol->location = location;
         symbol->length = length;
         currentScope->symbols.push_back(symbol);
-#if VERBOSE
-//        printSymtab(listing);
-#endif
 
         return;
     }
@@ -76,9 +76,6 @@ void insert(const string& name, int line, int location, int length)
         for (const Symbol &item : scopePtr->symbols) {
             if (item->name == name) {
                 item->lineno.push_back(line);
-#if VERBOSE
-//                printSymtab(listing);
-#endif
                 return;
             }
         }
@@ -89,29 +86,19 @@ void insert(const string& name, int line, int location, int length)
 
 void enterScope()
 {
-#if VERBOSE
     cout << "enter scope" << endl;
-#endif
 
     Scope innerScope = (Scope)malloc(sizeof(struct ScopeRec));
 
-    currentScope->inner = innerScope;
+    currentScope->inner.push_back(innerScope);
     innerScope->outer = currentScope;
     currentScope = innerScope;
 
 }
 
-void exitScope(int setNULL)
+void exitScope()
 {
-#if VERBOSE
     cout << "exit scope" << endl;
-#endif
-    if (setNULL) {
-        Scope holder = currentScope;
-        currentScope = currentScope->outer;
-        free(holder);
-    } else {
-        currentScope = currentScope->outer;
-    }
+    currentScope = currentScope->outer;
 }
 /* printSymtab */

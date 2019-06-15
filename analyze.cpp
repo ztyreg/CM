@@ -21,7 +21,7 @@ static void insertPost(TreeNode *t)
     if (t->nodekind == StmtK) {
         switch (t->kind.stmt) {
             case (CompK):
-                exitScope(TRUE);
+                exitScope();
 
                 break;
             default:
@@ -70,9 +70,7 @@ static void insertPre(TreeNode *t)
                 string type = t->child[0]->attr.type;
                 int line = t->child[1]->lineno;
                 if (lookup(name) == NOT_EXIST) {
-#if VERBOSE
                     cout << "new " << type << " " << name << endl;
-#endif
                     if (type == "int") {
                         insert(name, line, location++, 1);
                     } else if (type == "int*") {
@@ -84,9 +82,7 @@ static void insertPre(TreeNode *t)
 
 
                 } else if (lookup(name) == EXISTS_OUTER) {
-#if VERBOSE
                     cout << "overwrite " << type << " " << name << endl;
-#endif
                     if (type == "int") {
                         insert(name, line, location++, 1);
                     } else if (type == "int*") {
@@ -97,9 +93,7 @@ static void insertPre(TreeNode *t)
                     }
 
                 } else if (lookup(name) == EXISTS_THIS) {
-#if VERBOSE
                     cout << "redefine " << name << endl;
-#endif
                     cerr << "Error: redefine symbol" << endl;
                 }
 
@@ -141,9 +135,7 @@ static void insertTraverse( TreeNode *t)
 
 Symtab buildSymtab(TreeNode *t)
 {
-#if VERBOSE
     cout << "\nBuild symtab start ..." << endl;
-#endif
     insertTraverse(t);
 //    printSymtab(listing);
 
@@ -152,9 +144,7 @@ Symtab buildSymtab(TreeNode *t)
 
 void typeCheck(TreeNode *t)
 {
-#if VERBOSE
     cout << "\nType check start ..." << endl;
-#endif
 //    traverse(t, nullProc, checkNode);
 
 }

@@ -5,9 +5,9 @@
 #include <iostream>
 #include "code.h"
 
-void generateCode(TreeNode *syntaxTree, string fileName)
+void generateCode(TreeNode *syntaxTree)
 {
-    cout << "Gegerate code start ..." << endl;
+    code << "# CM P-CODE" << endl;
 
 
 }
