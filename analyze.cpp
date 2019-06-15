@@ -18,7 +18,7 @@ Scope *sp = program;
 static void nullProc(TreeNode *t)
 {}
 
-static void insertPost(TreeNode *t)
+static void postProc(TreeNode *t)
 {
     if (t->nodekind == StmtK) {
         switch (t->kind.stmt) {
@@ -29,6 +29,8 @@ static void insertPost(TreeNode *t)
             default:
                 break;
         }
+    } else if (t->nodekind == ExpK) {
+
     }
 }
 
@@ -44,7 +46,7 @@ static void insertPost(TreeNode *t)
  * compound-stmt -> { local-declarations statement-list }<br>
  * @param t AST
  */
-static void insertPre(TreeNode *t)
+static void preProc(TreeNode *t)
 {
     if (t->nodekind == StmtK) {
         switch (t->kind.stmt) {
@@ -115,38 +117,26 @@ static void insertPre(TreeNode *t)
 
 }
 
-static void checkNode(TreeNode *t)
-{
-
-}
-
-static void insertTraverse( TreeNode *t)
+static void traverse(TreeNode *t)
 {
     if (t != NULL) {
-        insertPre(t);
+        preProc(t);
         {
             int i;
             for (i = 0; i < MAXCHILDREN; i++)
-                insertTraverse(t->child[i]);
+                traverse(t->child[i]);
         }
-        insertPost(t);
-        insertTraverse(t->sibling);
+        postProc(t);
+        traverse(t->sibling);
     }
 
 }
 
-Scope * buildSymtab(TreeNode *t)
+Scope *buildSymtab(TreeNode *t)
 {
     cout << "\nBuild symtab start ..." << endl;
-    insertTraverse(t);
-//    printSymtab(listing);
+    traverse(t);
     return program;
 
 }
 
-void typeCheck(TreeNode *t)
-{
-    cout << "\nType check start ..." << endl;
-//    traverse(t, nullProc, checkNode);
-
-}

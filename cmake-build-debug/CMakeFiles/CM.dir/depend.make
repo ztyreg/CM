@@ -8,7 +8,10 @@ CMakeFiles/CM.dir/analyze.cpp.o: ../symtab.h
 
 CMakeFiles/CM.dir/code.cpp.o: ../code.cpp
 CMakeFiles/CM.dir/code.cpp.o: ../code.h
+CMakeFiles/CM.dir/code.cpp.o: ../codeUtil.h
 CMakeFiles/CM.dir/code.cpp.o: ../globals.h
+CMakeFiles/CM.dir/code.cpp.o: ../symtab.h
+CMakeFiles/CM.dir/code.cpp.o: ../tiny.tab.h
 
 CMakeFiles/CM.dir/codeUtil.cpp.o: ../codeUtil.cpp
 CMakeFiles/CM.dir/codeUtil.cpp.o: ../codeUtil.h

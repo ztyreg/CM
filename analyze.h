@@ -10,6 +10,4 @@
 
 Scope * buildSymtab(TreeNode *t);
 
-void typeCheck(TreeNode * t);
-
 #endif //CM_ANALYZE_H

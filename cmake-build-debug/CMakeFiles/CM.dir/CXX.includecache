@@ -6,21 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/Users/zty/Documents/Courses/Compiler/CM/analyze.cpp
+/Users/zty/Documents/Courses/Compiler/CM/code.cpp
 iostream
 -
-analyze.h
-/Users/zty/Documents/Courses/Compiler/CM/analyze.h
+code.h
+/Users/zty/Documents/Courses/Compiler/CM/code.h
+codeUtil.h
+/Users/zty/Documents/Courses/Compiler/CM/codeUtil.h
+tiny.tab.h
+/Users/zty/Documents/Courses/Compiler/CM/tiny.tab.h
 symtab.h
 /Users/zty/Documents/Courses/Compiler/CM/symtab.h
-globals.h
-/Users/zty/Documents/Courses/Compiler/CM/globals.h
 
-/Users/zty/Documents/Courses/Compiler/CM/analyze.h
+/Users/zty/Documents/Courses/Compiler/CM/code.h
 globals.h
 /Users/zty/Documents/Courses/Compiler/CM/globals.h
-symtab.h
-/Users/zty/Documents/Courses/Compiler/CM/symtab.h
+string
+-
+
+/Users/zty/Documents/Courses/Compiler/CM/codeUtil.h
+string
+-
 
 /Users/zty/Documents/Courses/Compiler/CM/globals.h
 stdio.h
@@ -43,4 +49,6 @@ string
 -
 globals.h
 /Users/zty/Documents/Courses/Compiler/CM/globals.h
+
+/Users/zty/Documents/Courses/Compiler/CM/tiny.tab.h
 

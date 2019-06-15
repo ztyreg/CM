@@ -45,12 +45,12 @@ int main()
     // analyze
     Scope *program;
     program = buildSymtab(t);
-    typeCheck(t);
     printSymtab(program);
 
     // code
     code.open("test.asm", ios::out | ios::trunc);
-    generateCode(t);
+    CodeGenerator generator(program);
+    generator.generateCodeDriver(t);
 
     return 0;
 

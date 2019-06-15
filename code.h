@@ -10,6 +10,20 @@
 
 using namespace std;
 
-void generateCode(TreeNode *syntaxTree);
+class CodeGenerator {
+private:
+    Scope *symtab;
+
+public:
+    explicit CodeGenerator(Scope *symtab);
+
+    void generateCodeDriver(TreeNode *t);
+
+    void generateCode(TreeNode *t);
+
+    void genStmt(TreeNode *t);
+
+    void genExp(TreeNode *t);
+};
 
 #endif //CM_CODE_H

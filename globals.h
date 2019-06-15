@@ -74,6 +74,10 @@ typedef struct treeNode {
     ExpType type; /* for type checking of exps */
 } TreeNode;
 
+/**************************************************/
+/****************   Symbol table ******************/
+/**************************************************/
+
 class Symbol {
 public:
     string name;

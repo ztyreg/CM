@@ -9,7 +9,10 @@ CMakeFiles/CM.dir/analyze.cpp.o
 CMakeFiles/CM.dir/code.cpp.o
  /Users/zty/Documents/Courses/Compiler/CM/code.cpp
  /Users/zty/Documents/Courses/Compiler/CM/code.h
+ /Users/zty/Documents/Courses/Compiler/CM/codeUtil.h
  /Users/zty/Documents/Courses/Compiler/CM/globals.h
+ /Users/zty/Documents/Courses/Compiler/CM/symtab.h
+ /Users/zty/Documents/Courses/Compiler/CM/tiny.tab.h
 CMakeFiles/CM.dir/codeUtil.cpp.o
  /Users/zty/Documents/Courses/Compiler/CM/codeUtil.cpp
  /Users/zty/Documents/Courses/Compiler/CM/codeUtil.h
