@@ -19,6 +19,12 @@
  */
 #define gp 5
 
+/* ra = "return address */
+#define ra 4
+
+/* rv = "return value" */
+#define rv 3
+
 /* accumulator */
 #define  ac 0
 

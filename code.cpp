@@ -102,26 +102,13 @@ void CodeGenerator::genStmt(TreeNode *t)
             emitRM_Abs("LDA", pc, savedLoc1, "jmp to end");
             emitRestore();
 
-//            /* while test */
-//            p1 = t->child[0];
-//            /* while body */
-//            p2 = t->child[1];
-//            /* generate code for test */
-//            savedLoc1 = emitSkip(1);
-//            emitComment("while: jump after body comes back here");
-//            generateCode(p1);
-//            savedLoc2 = emitSkip(1);
-//            /* generate code for body */
-//            generateCode(p2);
-//            emitRM_Abs("LDA", pc, savedLoc1, "jmp to test");
-//            currentLoc = emitSkip(0);
-//            emitBackup(savedLoc2);
-//            emitRM_Abs("JEQ", ac, currentLoc, "while: jmp to end");
-//            emitRestore();
             emitComment("<- while");
             break; /* repeat */
         case RetK:
             cout << "... return" << endl;
+            /* jump to caller */
+            emitRO("LDA", pc, 0, ra, "return");
+            /* recover registers */
             break;
         case CallK:
             cout << "... call" << endl;
@@ -133,6 +120,14 @@ void CodeGenerator::genStmt(TreeNode *t)
                 /* now output it */
                 emitRO("OUT", ac, 0, 0, "write ac");
             } else {
+                emitRM_Abs("LDA", ra, 0, "return address");
+                /* save all registers to memory */
+                loc = findLoc(t->attr.name, t->attr.type, symtab);
+                emitRM("ST", ac, loc, gp, "return: store value");
+
+
+                /* jump to callee */
+                emitRO("LDA", pc, 0, ra, "return");
 
             }
             break;

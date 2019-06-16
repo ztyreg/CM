@@ -122,8 +122,8 @@ static void preProc(TreeNode *t)
                     cerr << "Error: redefine symbol" << endl;
                 }
 
-                /* length of a func node is 0 */
-                sp = insert(funcName, funcType, line, location, 0, sp);
+                /* length of a func node is 1 */
+                sp = insert(funcName, funcType, line, location++, 1, sp);
                 /* enter scope after adding func symbol */
                 sp = enterScope(sp);
                 skipOneEnter = TRUE;
