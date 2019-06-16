@@ -106,9 +106,13 @@ void CodeGenerator::genStmt(TreeNode *t)
             break; /* repeat */
         case RetK:
             cout << "... return" << endl;
+            /* write return value */
+
             /* jump to caller */
             emitRO("LDA", pc, 0, ra, "return");
+
             /* recover registers */
+
             break;
         case CallK:
             cout << "... call" << endl;
@@ -119,15 +123,30 @@ void CodeGenerator::genStmt(TreeNode *t)
                 generateCode(t->child[1]);
                 /* now output it */
                 emitRO("OUT", ac, 0, 0, "write ac");
-            } else {
-                emitRM_Abs("LDA", ra, 0, "return address");
-                /* save all registers to memory */
-                loc = findLoc(t->attr.name, t->attr.type, symtab);
-                emitRM("ST", ac, loc, gp, "return: store value");
 
+            } else {
+                /* save registers to memory */
+//                emitRM("ST", ac, loc, gp, "return: store value");
+
+                /* write return address pc + 1 */
+                emitRM_Abs("LDA", ra, 1, "return address");
+
+                /* expression result as parameter value */
+                for (TreeNode *parPtr = t->child[1];
+                     parPtr != NULL;
+                     parPtr = parPtr->sibling) {
+                    /* parameter value in ac */
+                    generateCode(parPtr);
+
+                    loc = Functions[t->attr.name][parPtr->attr.name];
+                    /* lookup function parameter list */
+                    emitRM("ST", ac, loc, gp, "assign: store value");
+
+                }
 
                 /* jump to callee */
-                emitRO("LDA", pc, 0, ra, "return");
+                loc = findLoc(t->attr.name, t->attr.type, symtab);
+                emitRO("LDA", pc, 0, ra, "entry");
 
             }
             break;

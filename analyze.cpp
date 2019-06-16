@@ -121,6 +121,7 @@ static void preProc(TreeNode *t)
                     cout << "redefine " << funcName << endl;
                     cerr << "Error: redefine symbol" << endl;
                 }
+                //TODO add parameters to 'Function' in global.h
 
                 /* length of a func node is 1 */
                 sp = insert(funcName, funcType, line, location++, 1, sp);

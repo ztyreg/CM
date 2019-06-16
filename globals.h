@@ -7,6 +7,7 @@
 #include <string.h>
 #include <fstream>
 #include <vector>
+#include <map>
 
 #ifndef FALSE
 #define FALSE 0
@@ -97,6 +98,13 @@ public:
     Scope *outer;
     vector<Scope *> inner;
 };
+
+/**************************************************/
+/**********   function parameter list *************/
+/**************************************************/
+
+/* function name <parameter name, parameter location */
+map<string, map<string, int> > Functions;
 
 extern int Error;
 
