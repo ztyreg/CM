@@ -6,3 +6,7 @@ syntax: tiny.l tiny.y
 
 test: all
 	./a.out
+
+tm: tm.c
+	gcc -o tm tm.c
+

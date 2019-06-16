@@ -1,3 +1,4 @@
 /Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/EXE.dir
 /Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles/CM.dir

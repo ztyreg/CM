@@ -105,9 +105,14 @@ static void preProc(TreeNode *t)
                 break;
             }
             case (FuncK):
-                /* parameter list */
                 sp = enterScope(sp);
                 skipOneEnter = TRUE;
+
+
+                /* parameter list as local variable */
+
+
+
                 break;
             default:
                 break;

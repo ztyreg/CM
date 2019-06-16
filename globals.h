@@ -65,7 +65,7 @@ typedef struct treeNode {
         ExpKind exp;
         DeclKind decl;
     } kind;
-    union {
+    struct {
         TokenType op;
         int val;
         char *name;

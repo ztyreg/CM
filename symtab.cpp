@@ -53,6 +53,24 @@ lookupResult lookup(const string& name, Scope *currentScope)
     return NOT_EXIST;
 }
 
+int findLoc(const string& name, Scope *currentScope)
+{
+    cout << "looking up " << name << endl;
+
+    Scope *scopePtr;
+    for ( scopePtr = currentScope;
+          scopePtr != NULL;
+          scopePtr = scopePtr->outer) {
+        for (Symbol *item : scopePtr->symbols) {
+            if (item->name == name) {
+                return item->location;
+            }
+        }
+    }
+    cerr << "Not found" << endl;
+    return -1;
+}
+
 Scope * insert(const string &name, int line, int location, int length, Scope *sp)
 {
     if (location != -1) {
@@ -94,13 +112,30 @@ Scope * enterScope(Scope *sp)
     innerScope->outer = sp;
     sp = innerScope;
     return sp;
+}
 
+Scope *enterFirstScope(Scope *sp)
+{
+    cout << "enter scope" << endl;
+
+    return sp->inner[0];
 }
 
 Scope * exitScope(Scope *sp)
 {
     cout << "exit scope" << endl;
     sp = sp->outer;
+    return sp;
+}
+
+Scope *exitScopeSetNull(Scope *sp)
+{
+    cout << "exit scope" << endl;
+    sp = sp->outer;
+    Scope *temp = sp->inner[0];
+    sp->inner.erase(sp->inner.begin());
+    delete temp;
+
     return sp;
 }
 /* printSymtab */

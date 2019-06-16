@@ -53,7 +53,7 @@ void emitRestore(void)
 void emitRM_Abs(string op, int r, int a, string c)
 {
     code << emitLoc << ": "
-         << op << " " << r << "," << a-(emitLoc+1)
+         << op << " " << r << "," << a - (emitLoc + 1)
          << "(" << pc << ")"
          << "# " << c << endl;
     ++emitLoc;

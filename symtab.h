@@ -20,17 +20,25 @@ using namespace std;
  */
 
 
-typedef enum {EXISTS_OUTER, EXISTS_THIS, NOT_EXIST} lookupResult;
+typedef enum {
+    EXISTS_OUTER, EXISTS_THIS, NOT_EXIST
+} lookupResult;
 
 //void hash();
 
-Scope * insert(const string &name, int line, int location, int length, Scope *sp);
+Scope *insert(const string &name, int line, int location, int length, Scope *sp);
 
-lookupResult lookup(const string& name, Scope *currentScope);
+lookupResult lookup(const string &name, Scope *currentScope);
 
-Scope * enterScope(Scope *sp);
+int findLoc(const string &name, Scope *currentScope);
 
-Scope * exitScope(Scope *sp);
+Scope *enterScope(Scope *sp);
+
+Scope *enterFirstScope(Scope *sp);
+
+Scope *exitScope(Scope *sp);
+
+Scope *exitScopeSetNull(Scope *sp);
 
 void printSymtab(Scope *scopePtr);
 

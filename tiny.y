@@ -77,6 +77,7 @@ var
 	|IDENTIFIER '[' expression ']'
 	{$$=$1;
 	 $$->sibling = $3;
+	 $$->attr.name = $1->attr.name;
 	 $$->attr.type=(char*)"int*";
 	}
 	;
@@ -208,6 +209,8 @@ expression_stmt
 expression
 	:var EQ expression 
 	{$$ = newStmtNode(AssignK);
+	 /* name of expression is the same as that of the variable */
+	 $$->attr.name=$1->attr.name;
 	 $$->child[0]=$1;
 	 $$->child[1]=$3;
 	}
@@ -263,7 +266,7 @@ factor
 	:LPAREN expression RPAREN { $$ = $2; }
 	|var { $$ = $1; }
 	|call { $$ = $1; }
-	|CONSTANT 
+	|CONSTANT { $$ = $1; };
 	|ERROR { $$ = NULL; }
 	;
 call

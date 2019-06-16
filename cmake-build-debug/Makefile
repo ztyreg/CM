@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named EXE
+
+# Build rule for target.
+EXE: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EXE
+.PHONY : EXE
+
+# fast build rule for target.
+EXE/fast:
+	$(MAKE) -f CMakeFiles/EXE.dir/build.make CMakeFiles/EXE.dir/build
+.PHONY : EXE/fast
+
+#=============================================================================
 # Target rules for targets named CM
 
 # Build rule for target.
@@ -312,6 +325,33 @@ tiny.tab.cpp.s:
 	$(MAKE) -f CMakeFiles/CM.dir/build.make CMakeFiles/CM.dir/tiny.tab.cpp.s
 .PHONY : tiny.tab.cpp.s
 
+tm.o: tm.c.o
+
+.PHONY : tm.o
+
+# target to build an object file
+tm.c.o:
+	$(MAKE) -f CMakeFiles/EXE.dir/build.make CMakeFiles/EXE.dir/tm.c.o
+.PHONY : tm.c.o
+
+tm.i: tm.c.i
+
+.PHONY : tm.i
+
+# target to preprocess a source file
+tm.c.i:
+	$(MAKE) -f CMakeFiles/EXE.dir/build.make CMakeFiles/EXE.dir/tm.c.i
+.PHONY : tm.c.i
+
+tm.s: tm.c.s
+
+.PHONY : tm.s
+
+# target to generate assembly for a file
+tm.c.s:
+	$(MAKE) -f CMakeFiles/EXE.dir/build.make CMakeFiles/EXE.dir/tm.c.s
+.PHONY : tm.c.s
+
 util.o: util.cpp.o
 
 .PHONY : util.o
@@ -347,6 +387,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... EXE"
 	@echo "... CM"
 	@echo "... analyze.o"
 	@echo "... analyze.i"
@@ -369,6 +410,9 @@ help:
 	@echo "... tiny.tab.o"
 	@echo "... tiny.tab.i"
 	@echo "... tiny.tab.s"
+	@echo "... tm.o"
+	@echo "... tm.i"
+	@echo "... tm.s"
 	@echo "... util.o"
 	@echo "... util.i"
 	@echo "... util.s"

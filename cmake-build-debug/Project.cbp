@@ -37,6 +37,48 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="EXE">
+				<Option output="/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/EXE" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/Makefile&quot;  VERBOSE=1 EXE"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EXE/fast">
+				<Option output="/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/EXE" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/Makefile&quot;  VERBOSE=1 EXE/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="CM">
 				<Option output="/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CM" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir=""/>
@@ -112,6 +154,9 @@
 		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/tiny.tab.cpp">
 			<Option target="CM"/>
+		</Unit>
+		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/tm.c">
+			<Option target="EXE"/>
 		</Unit>
 		<Unit filename="/Users/zty/Documents/Courses/Compiler/CM/util.cpp">
 			<Option target="CM"/>

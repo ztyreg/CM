@@ -65,6 +65,43 @@ CMAKE_SOURCE_DIR = /Users/zty/Documents/Courses/Compiler/CM
 CMAKE_BINARY_DIR = /Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug
 
 #=============================================================================
+# Target rules for target CMakeFiles/EXE.dir
+
+# All Build rule for target.
+CMakeFiles/EXE.dir/all:
+	$(MAKE) -f CMakeFiles/EXE.dir/build.make CMakeFiles/EXE.dir/depend
+	$(MAKE) -f CMakeFiles/EXE.dir/build.make CMakeFiles/EXE.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles --progress-num=10,11 "Built target EXE"
+.PHONY : CMakeFiles/EXE.dir/all
+
+# Include target in all.
+all: CMakeFiles/EXE.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/EXE.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EXE.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zty/Documents/Courses/Compiler/CM/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/EXE.dir/rule
+
+# Convenience name for target.
+EXE: CMakeFiles/EXE.dir/rule
+
+.PHONY : EXE
+
+# clean rule for target.
+CMakeFiles/EXE.dir/clean:
+	$(MAKE) -f CMakeFiles/EXE.dir/build.make CMakeFiles/EXE.dir/clean
+.PHONY : CMakeFiles/EXE.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/EXE.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/CM.dir
 
 # All Build rule for target.
