@@ -26,11 +26,11 @@ typedef enum {
 
 //void hash();
 
-Scope *insert(const string &name, int line, int location, int length, Scope *sp);
+Scope *insert(const string &name, const string &type, int line, int location, int length, Scope *sp);
 
-lookupResult lookup(const string &name, Scope *currentScope);
+lookupResult lookup(const string &name, const string &type, Scope *currentScope);
 
-int findLoc(const string &name, Scope *currentScope);
+int findLoc(const string &name, const string &type, Scope *currentScope);
 
 Scope *enterScope(Scope *sp);
 

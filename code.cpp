@@ -64,7 +64,7 @@ void CodeGenerator::genStmt(TreeNode *t)
             /* generate code for rhs */
             generateCode(t->child[1]);
             /* now store value */
-            loc = findLoc(t->attr.name, symtab);
+            loc = findLoc(t->attr.name, t->attr.type, symtab);
             if (t->child[0]->sibling != NULL) {
                 cout << "... ... int*" << endl;
                 loc += t->child[0]->sibling->attr.val;
@@ -163,7 +163,7 @@ void CodeGenerator::genExp(TreeNode *t)
         case IdK :
             cout << "... id" << endl;
             emitComment("-> Id");
-            loc = findLoc(t->attr.name, symtab);
+            loc = findLoc(t->attr.name, t->attr.type, symtab);
             emitRM("LD", ac, loc, gp, "load id value");
             emitComment("<- Id");
             break; /* IdK */

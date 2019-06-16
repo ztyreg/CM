@@ -1,36 +1,35 @@
 int x;
 
-int main(void)
+/*int main(void)
 {
     int y[6];
     int i;
 
     x = 7;
     if (x > 6) {
-        /* output(int x) is predefined */
-        output(x); /* 7 */
+        *//* output(int x) is predefined *//*
+        output(x); *//* 7 *//*
     }
     if (x > 6) {
         int x;
         x = 10;
-        output(x); /* 10 */
+        output(x); *//* 10 *//*
     }
     while (x >= 3) {
         x = x - 1;
     }
-    output(x); /* 2 */
+    output(x); *//* 2 *//*
 
     i = 0;
     while (i < 6) {
         y[i] = i;
         i = i + 1;
     }
-    output(y[5]); /* 5 */
+    output(y[5]); *//* 5 *//*
 
-}
+}*/
 
 
-/*
 int min(int u, int v)
 {
 	if (u < v) return u;
@@ -57,4 +56,3 @@ int main(void)
 	output(y);
 	return 0;
 }
-*/

@@ -70,33 +70,36 @@ static void preProc(TreeNode *t)
         switch (t->kind.decl) {
             case (VarK): {
                 /* ID after a type-specifier */
-                string name = t->child[1]->attr.name;
+                cout << "var" << t->child[1]->attr.name << endl;
                 string type = t->child[0]->attr.type;
+                if (type == "void") break;
+
+                string name = t->child[1]->attr.name;
                 int line = t->child[1]->lineno;
-                if (lookup(name, sp) == NOT_EXIST) {
+                if (lookup(name, type, sp) == NOT_EXIST) {
                     cout << "new " << type << " " << name << endl;
                     if (type == "int") {
-                        sp = insert(name, line, location++, 1, sp);
+                        sp = insert(name, type, line, location++, 1, sp);
                     } else if (type == "int*") {
                         int len = t->child[2]->attr.val;
 
-                        sp = insert(name, line, location, len, sp);
+                        sp = insert(name, type, line, location, len, sp);
                         location += len;
                     }
 
 
-                } else if (lookup(name, sp) == EXISTS_OUTER) {
+                } else if (lookup(name, type, sp) == EXISTS_OUTER) {
                     cout << "overwrite " << type << " " << name << endl;
                     if (type == "int") {
-                        sp = insert(name, line, location++, 1, sp);
+                        sp = insert(name, type, line, location++, 1, sp);
                     } else if (type == "int*") {
                         int len = t->child[2]->attr.val;
 
-                        sp = insert(name, line, location, len, sp);
+                        sp = insert(name, type, line, location, len, sp);
                         location += len;
                     }
 
-                } else if (lookup(name, sp) == EXISTS_THIS) {
+                } else if (lookup(name, type, sp) == EXISTS_THIS) {
                     cout << "redefine " << name << endl;
                     cerr << "Error: redefine symbol" << endl;
                 }
@@ -104,16 +107,29 @@ static void preProc(TreeNode *t)
 
                 break;
             }
-            case (FuncK):
+            case (FuncK): {
+                string funcName = t->child[1]->attr.name;
+                /* e.g. funcint */
+                string funcType = "func" + string(t->child[0]->attr.type);
+                int line = t->child[1]->lineno;
+
+                if (lookup(funcName, funcType, sp) == NOT_EXIST) {
+                    cout << "new " << funcType << " " << funcName << endl;
+                } else if (lookup(funcName, funcType, sp) == EXISTS_OUTER) {
+                    cout << "overwrite " << funcType << " " << funcName << endl;
+                } else if (lookup(funcName, funcType, sp) == EXISTS_THIS) {
+                    cout << "redefine " << funcName << endl;
+                    cerr << "Error: redefine symbol" << endl;
+                }
+
+                /* length of a func node is 0 */
+                sp = insert(funcName, funcType, line, location, 0, sp);
+                /* enter scope after adding func symbol */
                 sp = enterScope(sp);
                 skipOneEnter = TRUE;
 
-
-                /* parameter list as local variable */
-
-
-
                 break;
+            }
             default:
                 break;
         }

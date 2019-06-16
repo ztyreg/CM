@@ -16,7 +16,9 @@ void printSymtab(Scope *scopePtr)
     cout << "---------------" << endl;
 
     for (Symbol *item : scopePtr->symbols) {
-        cout << item->name << " " << item->location;
+        cout << item->type << " "
+             << item->name << " " 
+             << item->location;
         for (const int &range : item->lineno) {
             cout << " " << range;
         }
@@ -32,20 +34,20 @@ void printSymtab(Scope *scopePtr)
     cout << "------end------" << endl;
 }
 
-lookupResult lookup(const string& name, Scope *currentScope)
+lookupResult lookup(const string &name, const string &type, Scope *currentScope)
 {
     for (Symbol *item : currentScope->symbols) {
-        if (item->name == name) {
+        if (item->name == name && item->type == type) {
             return EXISTS_THIS;
         }
     }
 
     Scope *scopePtr;
-    for ( scopePtr = currentScope->outer;
-          scopePtr != NULL;
-          scopePtr = scopePtr->outer) {
+    for (scopePtr = currentScope->outer;
+         scopePtr != NULL;
+         scopePtr = scopePtr->outer) {
         for (Symbol *item : scopePtr->symbols) {
-            if (item->name == name) {
+            if (item->name == name && item->type == type) {
                 return EXISTS_OUTER;
             }
         }
@@ -53,16 +55,16 @@ lookupResult lookup(const string& name, Scope *currentScope)
     return NOT_EXIST;
 }
 
-int findLoc(const string& name, Scope *currentScope)
+int findLoc(const string &name, const string &type, Scope *currentScope)
 {
     cout << "looking up " << name << endl;
 
     Scope *scopePtr;
-    for ( scopePtr = currentScope;
-          scopePtr != NULL;
-          scopePtr = scopePtr->outer) {
+    for (scopePtr = currentScope;
+         scopePtr != NULL;
+         scopePtr = scopePtr->outer) {
         for (Symbol *item : scopePtr->symbols) {
-            if (item->name == name) {
+            if (item->name == name && item->type == type) {
                 return item->location;
             }
         }
@@ -71,12 +73,13 @@ int findLoc(const string& name, Scope *currentScope)
     return -1;
 }
 
-Scope * insert(const string &name, int line, int location, int length, Scope *sp)
+Scope *insert(const string &name, const string &type, int line, int location, int length, Scope *sp)
 {
     if (location != -1) {
         /* new */
         Symbol *symbol = new Symbol();
         symbol->name = name;
+        symbol->type = type;
         symbol->lineno.push_back(line);
         symbol->location = location;
         symbol->length = length;
@@ -87,11 +90,11 @@ Scope * insert(const string &name, int line, int location, int length, Scope *sp
 
     /* exists */
     Scope *scopePtr;
-    for ( scopePtr = sp;
-          scopePtr != NULL;
-          scopePtr = scopePtr->outer) {
+    for (scopePtr = sp;
+         scopePtr != NULL;
+         scopePtr = scopePtr->outer) {
         for (Symbol *item : scopePtr->symbols) {
-            if (item->name == name) {
+            if (item->name == name && item->type == type) {
                 item->lineno.push_back(line);
                 return sp;
             }
@@ -102,7 +105,7 @@ Scope * insert(const string &name, int line, int location, int length, Scope *sp
     return sp;
 }
 
-Scope * enterScope(Scope *sp)
+Scope *enterScope(Scope *sp)
 {
     cout << "enter scope" << endl;
 
@@ -121,7 +124,7 @@ Scope *enterFirstScope(Scope *sp)
     return sp->inner[0];
 }
 
-Scope * exitScope(Scope *sp)
+Scope *exitScope(Scope *sp)
 {
     cout << "exit scope" << endl;
     sp = sp->outer;

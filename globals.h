@@ -81,6 +81,7 @@ typedef struct treeNode {
 class Symbol {
 public:
     string name;
+    string type;
     int location; //memory location
     int length;
     vector<int> lineno; //occurrences

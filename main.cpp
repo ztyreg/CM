@@ -23,7 +23,7 @@ ofstream code;
 int Error = FALSE;
 
 
-int main()
+int main(void)
 {
     listing = stdout;
     const char *sFile = "test.c";

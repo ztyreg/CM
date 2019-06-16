@@ -73,7 +73,10 @@ var_declaration
 	 }
 	;
 var
-	:IDENTIFIER 
+	:IDENTIFIER
+	{$$->attr.name = $1->attr.name;
+	 $$->attr.type = (char*)"int";
+	};
 	|IDENTIFIER '[' expression ']'
 	{$$=$1;
 	 $$->sibling = $3;
@@ -211,6 +214,7 @@ expression
 	{$$ = newStmtNode(AssignK);
 	 /* name of expression is the same as that of the variable */
 	 $$->attr.name=$1->attr.name;
+	 $$->attr.type=$1->attr.type;
 	 $$->child[0]=$1;
 	 $$->child[1]=$3;
 	}
